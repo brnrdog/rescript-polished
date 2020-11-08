@@ -1,0 +1,18 @@
+{
+  "name": "rescript-polished",
+  "version": "0.0.0-semantic-versioned",
+  "description": "rescript bindings for polished",
+  "main": "dist/index.js",
+  "repository": "https://github.com/brnrdog/rescript-polished",
+  "author": "Bernardo Gurgel <brnrdog@hey.com>",
+  "license": "MIT",
+  "scripts": {
+    "res:start": "bsb -make-world -w",
+    "res:build": "bsb -make-world",
+    "res:clean": "bsb -clean-world"
+  },
+  "dependencies": {
+    "bs-platform": "^8.3.2",
+    "polished": "^4.0.3"
+  }
+}
