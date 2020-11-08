@@ -9,10 +9,22 @@
   "scripts": {
     "res:start": "bsb -make-world -w",
     "res:build": "bsb -make-world",
-    "res:clean": "bsb -clean-world"
+    "res:clean": "bsb -clean-world",
+    "test": "jest"
   },
   "dependencies": {
     "bs-platform": "^8.3.2",
-    "polished": "^4.0.3"
+    "polished": "^4.0.3",
+    "semantic-release": "^17.2.2"
+  },
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.6.0",
+    "jest": "^26.6.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.bs.js"
+    ],
+    "verbose": true
   }
 }

@@ -5,3 +5,4 @@
 .merlin
 node_modules
 *.bs.js
+coverage
