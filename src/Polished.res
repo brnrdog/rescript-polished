@@ -21,3 +21,14 @@ let adjustHue = (color, ~degree) => color |> extAdjustHue(degree)
 @bs.module("polished") external extCompletement: (color) => color = "complement"
 let complement = extCompletement
 
+@bs.module("polished") external extDesaturate: (float, color) => color = "desaturate"
+let desaturate = (color, ~amount) => color |> extDesaturate(amount)
+
+@bs.module("polished") external extGetContrast: (color, color) => float = "getContrast"
+let getContrast = (color1, color2) => extGetContrast(color1, color2)
+
+@bs.module("polished") external extGetLuminance: color => float = "getLuminance"
+let getLuminance = extGetLuminance
+
+@bs.module("polished") external extGrayscale: color => color = "grayscale"
+let grayscale = extGrayscale
