@@ -1,9 +1,30 @@
 open Jest
+open Expect;
 
-Todo.test("shade")
+test("shade", () => {
+  "#ed5051"
+  -> Polished.shade(~amount=0.25)
+  |> expect
+  |> toBe("#b13c3c")
+})
 
-Todo.test("tint")
+test("tint", () => {
+  "#ed5051"
+  -> Polished.tint(~amount=0.25)
+  |> expect
+  |> toBe("#f17b7c")
+})
 
-Todo.test("lighten")
+test("lighten", () => {
+  "#ed5051"
+  -> Polished.lighten(~amount=0.25)
+  |> expect
+  |> toBe("#f9c4c4")
+})
 
-Todo.test("darken")
+test("darken", () => {
+  "#ed5051"
+  -> Polished.darken(~amount=0.25)
+  |> expect
+  |> toBe("#ac1213")
+})
