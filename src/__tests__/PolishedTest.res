@@ -41,3 +41,10 @@ test("adjustHue", () => {
   |> expect
   |> toBe("#ed9f50")
 })
+
+test("complement", () => {
+  "#ed5051"
+  -> Polished.complement
+  |> expect
+  |> toBe("#50edec")
+})

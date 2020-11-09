@@ -18,3 +18,6 @@ let hsl = (~hue, ~saturation, ~lightness) => extHsl(hue, saturation, lightness)
 @bs.module("polished") external extAdjustHue: (float, color) => color = "adjustHue"
 let adjustHue = (color, ~degree) => color |> extAdjustHue(degree)
 
+@bs.module("polished") external extCompletement: (color) => color = "complement"
+let complement = extCompletement
+
