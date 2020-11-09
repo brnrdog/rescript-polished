@@ -76,3 +76,16 @@ test("grayscale", () => {
   -> expect
   |> toBe("#9f9f9f")
 })
+
+test("hsla", () => {
+  -> Polished.hsla(~hue=130, ~saturation=0.25, ~lightness=0.5, ~alpha=0.5)
+  -> expect
+  |> toBe("rgba(96,159,106,0.5)")
+})
+
+test("invert", () => {
+  "#ed5951"
+  -> Polished.invert
+  -> expect
+  |> toBe("#12a6ae")
+})

@@ -32,3 +32,9 @@ let getLuminance = extGetLuminance
 
 @bs.module("polished") external extGrayscale: color => color = "grayscale"
 let grayscale = extGrayscale
+
+@bs.module("polished") external extHsla: (int, float, float, float) => color = "hsla"
+let hsla = (~hue, ~saturation, ~lightness, ~alpha) => extHsla(hue, saturation, lightness, alpha)
+
+@bs.module("polished") external extInvert: (color) => color = "invert";
+let invert = color => color |> extInvert
