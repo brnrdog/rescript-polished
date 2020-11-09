@@ -28,3 +28,9 @@ test("darken", () => {
   |> expect
   |> toBe("#ac1213")
 })
+
+test("hsl", () => {
+  Polished.hsl(~hue=30, ~saturation=0.5, ~lightness=0.3)
+  |> expect
+  |> toBe("#734d26")
+})
