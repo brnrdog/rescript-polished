@@ -1,7 +1,7 @@
 {
   "name": "rescript-polished",
   "version": "0.0.0-semantic-versioned",
-  "description": "rescript bindings for polished",
+  "description": "ReScript bindings for polished.",
   "main": "dist/index.js",
   "repository": "https://github.com/brnrdog/rescript-polished",
   "author": "Bernardo Gurgel <brnrdog@hey.com>",
