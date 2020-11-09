@@ -14,3 +14,7 @@ let darken  = (color, ~amount) => color |> extDarken(amount)
 
 @bs.module("polished") external extHsl: (int, float, float) => color = "hsl"
 let hsl = (~hue, ~saturation, ~lightness) => extHsl(hue, saturation, lightness)
+
+@bs.module("polished") external extAdjustHue: (float, color) => color = "adjustHue"
+let adjustHue = (color, ~degree) => color |> extAdjustHue(degree)
+

@@ -34,3 +34,10 @@ test("hsl", () => {
   |> expect
   |> toBe("#734d26")
 })
+
+test("adjustHue", () => {
+  "#ed5051"
+  -> Polished.adjustHue(~degree=30.5)
+  |> expect
+  |> toBe("#ed9f50")
+})
