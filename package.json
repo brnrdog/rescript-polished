@@ -10,7 +10,8 @@
     "res:start": "bsb -make-world -w",
     "res:build": "bsb -make-world",
     "res:clean": "bsb -clean-world",
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "jest --collect-coverage"
   },
   "dependencies": {
     "bs-platform": "^8.3.2",
