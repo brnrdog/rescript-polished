@@ -1,5 +1,12 @@
 type color = string
 
+type contrastScores = {
+  "AA": bool,
+  "AALarge": bool,
+  "AAA": bool,
+  "AAALarge": bool,
+}
+
 @bs.module("polished") external extShade: (float, color) => color = "shade"
 let shade = (color, ~amount) => color |> extShade(amount)
 
@@ -38,3 +45,6 @@ let hsla = (~hue, ~saturation, ~lightness, ~alpha) => extHsla(hue, saturation, l
 
 @bs.module("polished") external extInvert: (color) => color = "invert";
 let invert = color => color |> extInvert
+
+@bs.module("polished") external extMeetsContrastGuidelines: (color, color) => contrastScores = "meetsContrastGuidelines";
+let meetsContrastGuidelines = (color1, color2) => (color1) |> extMeetsContrastGuidelines(color2)

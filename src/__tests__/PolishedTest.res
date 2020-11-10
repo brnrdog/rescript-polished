@@ -89,3 +89,18 @@ test("invert", () => {
   -> expect
   |> toBe("#12a6ae")
 })
+
+test("meetsContrastGuidelines: true", () => {
+  let expected: Polished.contrastScores = {
+    "AA": true, 
+    "AALarge": true, 
+    "AAA": true, 
+    "AAALarge": true
+  }
+
+  ("#000000")
+  -> Polished.meetsContrastGuidelines("#ffffff")
+  -> expect
+  |> toEqual(expected)
+})
+
