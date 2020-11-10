@@ -26,10 +26,19 @@ Add `rescript-polished` as a `bs-dependency` in your bsconfig.json:
 ]
 ```
 
-
 ## Usage
 
-TBD.
+For better convenience in ReScript, these bindings were written in a data-first style, so the API might slightly different from the original polished package. Keep that in mind when consuming the Polished module.
+
+```rescript
+open Polished
+
+let primaryColor      = "#ed5051"
+let primaryColorLight = primaryColor -> Polished.lighten(~amount=0.25) // #f9c4c4
+let primaryColorDark  = primaryColor -> Polished.darken(~amount=0.25) // #ac1213
+let secondaryColor    = primaryColor -> Polished.complement // #50edec
+```
+
 
 ## License
 
