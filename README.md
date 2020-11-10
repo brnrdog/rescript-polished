@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/rescript-polished?style=flat-square)](https://www.npmjs.com/package/rescript-polished)
 [![Codecov](https://img.shields.io/codecov/c/github/brnrdog/rescript-polished?style=flat-square)](https://codecov.io/gh/brnrdog/rescript-polished)
 
-ReScript bindings for [polished](https://polished.js.org/), a lightweight toolset for writing styles in JavaScript ✨.
+Bindings for [polished](https://polished.js.org/), _a lightweight toolset for writing styles in JavaScript_, __now in ReScript__ ✨.
 
 **Note:** these bindings are still under development, check the [Polished](https://github.com/brnrdog/rescript-polished/blob/master/src/Polished.res) module to see the available functions.
 
