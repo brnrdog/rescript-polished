@@ -4,5 +4,4 @@
 .bsb.lock
 .merlin
 node_modules
-*.bs.js
 coverage
