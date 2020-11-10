@@ -2,7 +2,7 @@
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/brnrdog/rescript-polished/Release?style=flat-square)
 [![npm](https://img.shields.io/npm/v/rescript-polished?style=flat-square)](https://www.npmjs.com/package/rescript-polished)
-[![Codecov](https://img.shields.io/codecov/c/github/brnrdog/rescript-polished?style=flat-square)](https://codecov.io/gh/brnrdog/rescript-polished)
+[![Codecov](https://img.shields.io/codecov/c/github/brnrdog/rescript-polished?style=flat-square&token=GtTOH4bMML)](https://codecov.io/gh/brnrdog/rescript-polished)
 
 Bindings for [polished](https://polished.js.org/), _a lightweight toolset for writing styles in JavaScript_, __now in ReScript__ ✨.
 
