@@ -24,7 +24,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "<rootDir>/src/**/*.bs.js"
+      "<rootDir>/src/**/*.js"
     ],
     "verbose": true
   }
