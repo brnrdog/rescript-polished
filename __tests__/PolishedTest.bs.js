@@ -2,7 +2,7 @@
 'use strict';
 
 var Jest = require("@glennsl/bs-jest/src/jest.bs.js");
-var Polished = require("../Polished.bs.js");
+var Polished = require("../src/Polished.bs.js");
 
 Jest.test("shade", (function (param) {
         return Jest.Expect.toBe("#b13c3c", Jest.Expect.expect(Polished.shade("#ed5051", 0.25)));

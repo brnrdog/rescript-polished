@@ -8,7 +8,7 @@
       "subdirs": true
     },
     {
-      "dir": "src/__tests__",
+      "dir": "__tests__",
       "type": "dev"
     }
   ],
