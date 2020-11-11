@@ -82,4 +82,8 @@ Jest.test("mix", (function (param) {
         return Jest.Expect.toBe("#c58383", Jest.Expect.expect(Polished.mix("#ed5051", "#bc9090", 0.2)));
       }));
 
+Jest.test("opacify", (function (param) {
+        return Jest.Expect.toBe("rgba(237,80,81,0.5)", Jest.Expect.expect(Polished.opacify("#ed505100", 0.5)));
+      }));
+
 /*  Not a pure module */

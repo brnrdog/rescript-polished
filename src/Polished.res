@@ -63,3 +63,6 @@ let hslToColorString = hslColor => hslColor |> extHslToColorString
 
 @bs.module("polished") external extMix: (float, color, color) => color = "mix"
 let mix = (color1, color2, ~weight) => color2 |> extMix(weight, color1)
+
+@bs.module("polished") external extOpacify: (float, color) => color = "opacify"
+let opacify = (color, ~amount) => color |> extOpacify(amount)

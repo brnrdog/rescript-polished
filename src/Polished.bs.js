@@ -71,6 +71,10 @@ function mix(color1, color2, weight) {
   return Polished.mix(weight, color1, color2);
 }
 
+function opacify(color, amount) {
+  return Polished.opacify(amount, color);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -88,4 +92,5 @@ exports.meetsContrastGuidelines = meetsContrastGuidelines;
 exports.transparentize = transparentize;
 exports.hslToColorString = hslToColorString;
 exports.mix = mix;
+exports.opacify = opacify;
 /* polished Not a pure module */

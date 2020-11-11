@@ -130,3 +130,10 @@ test("mix", () => {
   -> expect
   |> toBe("#c58383")
 })
+
+test("opacify", () => {
+  "#ed505100"
+  -> Polished.opacify(~amount=0.5)
+  -> expect
+  |> toBe("rgba(237,80,81,0.5)")
+})
