@@ -78,4 +78,8 @@ Jest.test("hslToColorString", (function (param) {
                           })));
       }));
 
+Jest.test("mix", (function (param) {
+        return Jest.Expect.toBe("#c58383", Jest.Expect.expect(Polished.mix("#ed5051", "#bc9090", 0.2)));
+      }));
+
 /*  Not a pure module */

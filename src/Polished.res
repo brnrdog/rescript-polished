@@ -60,3 +60,6 @@ let transparentize = (color, ~amount) => color |> extTransparentize(amount)
 
 @bs.module("polished") external extHslToColorString: hslColor => color = "hslToColorString"
 let hslToColorString = hslColor => hslColor |> extHslToColorString
+
+@bs.module("polished") external extMix: (float, color, color) => color = "mix"
+let mix = (color1, color2, ~weight) => color2 |> extMix(weight, color1)

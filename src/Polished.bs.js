@@ -67,6 +67,10 @@ function hslToColorString(hslColor) {
   return Polished.hslToColorString(hslColor);
 }
 
+function mix(color1, color2, weight) {
+  return Polished.mix(weight, color1, color2);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -83,4 +87,5 @@ exports.invert = invert;
 exports.meetsContrastGuidelines = meetsContrastGuidelines;
 exports.transparentize = transparentize;
 exports.hslToColorString = hslToColorString;
+exports.mix = mix;
 /* polished Not a pure module */

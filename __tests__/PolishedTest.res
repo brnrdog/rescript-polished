@@ -123,3 +123,10 @@ test("hslToColorString", () => {
   -> expect
   |> toBe("#356020")
 })
+
+test("mix", () => {
+  "#ed5051"
+  -> Polished.mix("#bc9090", ~weight=0.2)
+  -> expect
+  |> toBe("#c58383")
+})
