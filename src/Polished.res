@@ -1,5 +1,11 @@
 type color = string
 
+type hslColor = {
+  hue: float,
+  saturation: float,
+  lightness: float
+}
+
 type contrastScores = {
   "AA": bool,
   "AALarge": bool,
@@ -51,3 +57,6 @@ let meetsContrastGuidelines = (color1, color2) => (color1) |> extMeetsContrastGu
 
 @bs.module("polished") external extTransparentize: (float, color) => color = "transparentize"
 let transparentize = (color, ~amount) => color |> extTransparentize(amount)
+
+@bs.module("polished") external extHslToColorString: hslColor => color = "hslToColorString"
+let hslToColorString = hslColor => hslColor |> extHslToColorString

@@ -63,6 +63,10 @@ function transparentize(color, amount) {
   return Polished.transparentize(amount, color);
 }
 
+function hslToColorString(hslColor) {
+  return Polished.hslToColorString(hslColor);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -78,4 +82,5 @@ exports.hsla = hsla;
 exports.invert = invert;
 exports.meetsContrastGuidelines = meetsContrastGuidelines;
 exports.transparentize = transparentize;
+exports.hslToColorString = hslToColorString;
 /* polished Not a pure module */

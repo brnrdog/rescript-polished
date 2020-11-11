@@ -110,3 +110,16 @@ test("transparentize", () => {
   -> expect
   |> toBe("rgba(237,80,81,0.5)")
 })
+
+test("hslToColorString", () => {
+  let hsl: Polished.hslColor = {
+    hue: 100.0,
+    saturation: 0.5,
+    lightness: 0.25
+  }
+
+  hsl
+  -> Polished.hslToColorString
+  -> expect
+  |> toBe("#356020")
+})

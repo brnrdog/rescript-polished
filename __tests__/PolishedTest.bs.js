@@ -70,4 +70,12 @@ Jest.test("transparentize", (function (param) {
         return Jest.Expect.toBe("rgba(237,80,81,0.5)", Jest.Expect.expect(Polished.transparentize("#ed5051", 0.5)));
       }));
 
+Jest.test("hslToColorString", (function (param) {
+        return Jest.Expect.toBe("#356020", Jest.Expect.expect(Polished.hslToColorString({
+                            hue: 100.0,
+                            saturation: 0.5,
+                            lightness: 0.25
+                          })));
+      }));
+
 /*  Not a pure module */
