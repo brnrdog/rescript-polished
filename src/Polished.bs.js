@@ -59,6 +59,10 @@ function meetsContrastGuidelines(color1, color2) {
   return Polished.meetsContrastGuidelines(color2, color1);
 }
 
+function transparentize(color, amount) {
+  return Polished.transparentize(amount, color);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -73,4 +77,5 @@ exports.grayscale = grayscale;
 exports.hsla = hsla;
 exports.invert = invert;
 exports.meetsContrastGuidelines = meetsContrastGuidelines;
+exports.transparentize = transparentize;
 /* polished Not a pure module */

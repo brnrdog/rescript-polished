@@ -48,3 +48,6 @@ let invert = color => color |> extInvert
 
 @bs.module("polished") external extMeetsContrastGuidelines: (color, color) => contrastScores = "meetsContrastGuidelines";
 let meetsContrastGuidelines = (color1, color2) => (color1) |> extMeetsContrastGuidelines(color2)
+
+@bs.module("polished") external extTransparentize: (float, color) => color = "transparentize"
+let transparentize = (color, ~amount) => color |> extTransparentize(amount)

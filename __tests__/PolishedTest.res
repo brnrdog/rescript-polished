@@ -104,3 +104,9 @@ test("meetsContrastGuidelines: true", () => {
   |> toEqual(expected)
 })
 
+test("transparentize", () => {
+  "#ed5051"
+  -> Polished.transparentize(~amount=0.5)
+  -> expect
+  |> toBe("rgba(237,80,81,0.5)")
+})

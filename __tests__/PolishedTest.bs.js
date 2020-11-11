@@ -66,4 +66,8 @@ Jest.test("meetsContrastGuidelines: true", (function (param) {
         return Jest.Expect.toEqual(expected, Jest.Expect.expect(Polished.meetsContrastGuidelines("#000000", "#ffffff")));
       }));
 
+Jest.test("transparentize", (function (param) {
+        return Jest.Expect.toBe("rgba(237,80,81,0.5)", Jest.Expect.expect(Polished.transparentize("#ed5051", 0.5)));
+      }));
+
 /*  Not a pure module */
