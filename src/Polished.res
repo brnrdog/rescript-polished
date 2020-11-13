@@ -37,6 +37,7 @@ let adjustHue = (color, ~degree) => color |> extAdjustHue(degree)
 
 @bs.module("polished") 
 external complement: color => color = "complement"
+let complement = complement
 
 @bs.module("polished")
 external extDesaturate: (float, color) => color = "desaturate"
@@ -48,20 +49,24 @@ let getContrast = (color1, color2) => extGetContrast(color1, color2)
 
 @bs.module("polished") 
 external getLuminance: color => float = "getLuminance"
+let getLuminance = getLuminance
 
 @bs.module("polished") 
 external grayscale: color => color = "grayscale"
+let grayscale = grayscale
 
 @bs.module("polished")
 external hsla: (int, float, float, float) => color = "hsla"
-let hsla = (~hue, ~saturation, ~lightness, ~alpha) =>
+let hsla = (~hue, ~saturation, ~lightness, ~alpha) => 
   hsla(hue, saturation, lightness, alpha)
 
 @bs.module("polished") 
 external invert: color => color = "invert"
+let invert = invert
 
 @bs.module("polished") 
 external meetsContrastGuidelines: (color, color) => contrastScores = "meetsContrastGuidelines"
+let meetsContrastGuidelines = meetsContrastGuidelines
 
 @bs.module("polished") 
 external extTransparentize: (float, color) => color = "transparentize"
@@ -69,12 +74,20 @@ let transparentize = (color, ~amount) => color |> extTransparentize(amount)
 
 @bs.module("polished")
 external hslToColorString: hslColor => color = "hslToColorString"
+let hslToColorString = hslToColorString
 
-@bs.module("polished") external extMix: (float, color, color) => color = "mix"
-let mix = (color1, color2, ~weight) => color2 |> extMix(weight, color1)
+@bs.module("polished") 
+external mix: (float, color, color) => color = "mix"
+let mix = (color1, color2, ~weight) => color2 |> mix(weight, color1)
 
-@bs.module("polished") external extOpacify: (float, color) => color = "opacify"
-let opacify = (color, ~amount) => color |> extOpacify(amount)
+@bs.module("polished") 
+external opacify: (float, color) => color = "opacify"
+let opacify = (color, ~amount) => color |> opacify(amount)
 
-@bs.module("polished") external parseToHsl: color => hslColor = "parseToHsl"
+@bs.module("polished") 
+external parseToHsl: color => hslColor = "parseToHsl"
+let parseToHsl = parseToHsl
 
+@bs.module("polished") 
+external parseToRgb: color => rgbColor = "parseToRgb"
+let parseToRgb = parseToRgb

@@ -150,3 +150,16 @@ test("parseToHsl", () => {
   -> expect
   |> toEqual(expected)
 })
+
+test("parseToRgb", () => {
+  let expected: Polished.rgbColor = {
+    "red": 237,
+    "green": 80,
+    "blue": 81
+  }
+
+  "#ed5051"
+  -> Polished.parseToRgb
+  -> expect
+  |> toEqual(expected)
+})
