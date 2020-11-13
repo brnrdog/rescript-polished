@@ -90,7 +90,7 @@ test("invert", () => {
   |> toBe("#12a6ae")
 })
 
-test("meetsContrastGuidelines: true", () => {
+test("meetsContrastGuidelines", () => {
   let expected: Polished.contrastScores = {
     "AA": true,
     "AALarge": true,

@@ -27,10 +27,6 @@ function adjustHue(color, degree) {
   return Polished.adjustHue(degree, color);
 }
 
-function complement(prim) {
-  return Polished.complement(prim);
-}
-
 function desaturate(color, amount) {
   return Polished.desaturate(amount, color);
 }
@@ -39,32 +35,12 @@ function getContrast(color1, color2) {
   return Polished.getContrast(color1, color2);
 }
 
-function getLuminance(prim) {
-  return Polished.getLuminance(prim);
-}
-
-function grayscale(prim) {
-  return Polished.grayscale(prim);
-}
-
 function hsla(hue, saturation, lightness, alpha) {
   return Polished.hsla(hue, saturation, lightness, alpha);
 }
 
-function invert(color) {
-  return Polished.invert(color);
-}
-
-function meetsContrastGuidelines(color1, color2) {
-  return Polished.meetsContrastGuidelines(color2, color1);
-}
-
 function transparentize(color, amount) {
   return Polished.transparentize(amount, color);
-}
-
-function hslToColorString(hslColor) {
-  return Polished.hslToColorString(hslColor);
 }
 
 function mix(color1, color2, weight) {
@@ -75,27 +51,16 @@ function opacify(color, amount) {
   return Polished.opacify(amount, color);
 }
 
-function parseToHsl(color) {
-  return Polished.parseToHsl(color);
-}
-
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
 exports.darken = darken;
 exports.hsl = hsl;
 exports.adjustHue = adjustHue;
-exports.complement = complement;
 exports.desaturate = desaturate;
 exports.getContrast = getContrast;
-exports.getLuminance = getLuminance;
-exports.grayscale = grayscale;
 exports.hsla = hsla;
-exports.invert = invert;
-exports.meetsContrastGuidelines = meetsContrastGuidelines;
 exports.transparentize = transparentize;
-exports.hslToColorString = hslToColorString;
 exports.mix = mix;
 exports.opacify = opacify;
-exports.parseToHsl = parseToHsl;
 /* polished Not a pure module */
