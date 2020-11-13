@@ -92,9 +92,9 @@ test("invert", () => {
 
 test("meetsContrastGuidelines: true", () => {
   let expected: Polished.contrastScores = {
-    "AA": true, 
-    "AALarge": true, 
-    "AAA": true, 
+    "AA": true,
+    "AALarge": true,
+    "AAA": true,
     "AAALarge": true
   }
 
@@ -113,15 +113,15 @@ test("transparentize", () => {
 
 test("hslToColorString", () => {
   let hsl: Polished.hslColor = {
-    hue: 100.0,
-    saturation: 0.5,
-    lightness: 0.25
+    "hue": 359.61783439490443,
+    "lightness": 0.6215686274509804,
+    "saturation": 0.8134715025906737,
   }
 
   hsl
   -> Polished.hslToColorString
   -> expect
-  |> toBe("#356020")
+  |> toBe("#ed5051")
 })
 
 test("mix", () => {
@@ -136,4 +136,17 @@ test("opacify", () => {
   -> Polished.opacify(~amount=0.5)
   -> expect
   |> toBe("rgba(237,80,81,0.5)")
+})
+
+test("parseToHsl", () => {
+  let expected: Polished.hslColor = {
+    "hue": 359.61783439490443,
+    "lightness": 0.6215686274509804,
+    "saturation": 0.8134715025906737,
+  }
+
+  "#ed5051"
+  -> Polished.parseToHsl
+  -> expect
+  |> toEqual(expected)
 })

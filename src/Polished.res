@@ -1,9 +1,9 @@
 type color = string
 
 type hslColor = {
-  hue: float,
-  saturation: float,
-  lightness: float
+  "hue": float,
+  "saturation": float,
+  "lightness": float
 }
 
 type contrastScores = {
@@ -66,3 +66,6 @@ let mix = (color1, color2, ~weight) => color2 |> extMix(weight, color1)
 
 @bs.module("polished") external extOpacify: (float, color) => color = "opacify"
 let opacify = (color, ~amount) => color |> extOpacify(amount)
+
+@bs.module("polished") external parseToHsl: (color) => hslColor = "parseToHsl"
+let parseToHsl = (color) => color |> parseToHsl

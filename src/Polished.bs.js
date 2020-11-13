@@ -75,6 +75,10 @@ function opacify(color, amount) {
   return Polished.opacify(amount, color);
 }
 
+function parseToHsl(color) {
+  return Polished.parseToHsl(color);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -93,4 +97,5 @@ exports.transparentize = transparentize;
 exports.hslToColorString = hslToColorString;
 exports.mix = mix;
 exports.opacify = opacify;
+exports.parseToHsl = parseToHsl;
 /* polished Not a pure module */

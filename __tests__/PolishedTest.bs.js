@@ -71,11 +71,12 @@ Jest.test("transparentize", (function (param) {
       }));
 
 Jest.test("hslToColorString", (function (param) {
-        return Jest.Expect.toBe("#356020", Jest.Expect.expect(Polished.hslToColorString({
-                            hue: 100.0,
-                            saturation: 0.5,
-                            lightness: 0.25
-                          })));
+        var hsl = {
+          hue: 359.61783439490443,
+          lightness: 0.6215686274509804,
+          saturation: 0.8134715025906737
+        };
+        return Jest.Expect.toBe("#ed5051", Jest.Expect.expect(Polished.hslToColorString(hsl)));
       }));
 
 Jest.test("mix", (function (param) {
@@ -84,6 +85,15 @@ Jest.test("mix", (function (param) {
 
 Jest.test("opacify", (function (param) {
         return Jest.Expect.toBe("rgba(237,80,81,0.5)", Jest.Expect.expect(Polished.opacify("#ed505100", 0.5)));
+      }));
+
+Jest.test("parseToHsl", (function (param) {
+        var expected = {
+          hue: 359.61783439490443,
+          lightness: 0.6215686274509804,
+          saturation: 0.8134715025906737
+        };
+        return Jest.Expect.toEqual(expected, Jest.Expect.expect(Polished.parseToHsl("#ed5051")));
       }));
 
 /*  Not a pure module */
