@@ -279,3 +279,22 @@ test("setSaturation", () => {
   -> expect
   |> toBe("#adad84")
 })
+
+test("math", () => {
+  "12px + 8px"
+  -> Math.math()
+  -> expect
+  |> toBe("20px")
+  |> keepGoing
+  
+  "12rem + 8rem"
+  -> Math.math()
+  -> expect
+  |> toBe("20rem")
+  |> keepGoing
+
+  
+  Math.math("10px + 8rem")
+  ->expect
+  |> toThrow
+})

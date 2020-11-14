@@ -155,5 +155,11 @@ Jest.test("setSaturation", (function (param) {
         return Jest.Expect.toBe("#adad84", Jest.Expect.expect(Curry._2(Polished.Color.setSaturation, "#CCCD64", 0.2)));
       }));
 
+Jest.test("math", (function (param) {
+        Jest.Expect.toBe("20px", Jest.Expect.expect(Curry._2(Polished.$$Math.math, "12px + 8px", undefined)));
+        Jest.Expect.toBe("20rem", Jest.Expect.expect(Curry._2(Polished.$$Math.math, "12rem + 8rem", undefined)));
+        return Jest.Expect.toThrow(Jest.Expect.expect(Curry._1(Polished.$$Math.math, "10px + 8rem")));
+      }));
+
 exports.keepGoing = keepGoing;
 /*  Not a pure module */
