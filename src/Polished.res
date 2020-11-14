@@ -101,3 +101,7 @@ let readableColor = (
   ~strict=true, 
   ()
 ) => readableColor(color, lightReturnColor, darkReturnColor, strict)
+
+@bs.module("polished")
+external rgb: rgbColor => color = "rgb"
+let rgb = rgb

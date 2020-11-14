@@ -119,5 +119,14 @@ Jest.test("readableColor", (function (param) {
         return Jest.Expect.toBe("#ddd", Jest.Expect.expect(Polished.readableColor("blue", "#333", "#ddd", true, undefined)));
       }));
 
+Jest.test("rgb", (function (param) {
+        var rgb = {
+          red: 255,
+          green: 255,
+          blue: 255
+        };
+        return Jest.Expect.toBe("#fff", Jest.Expect.expect(Polished.rgb(rgb)));
+      }));
+
 exports.keepGoing = keepGoing;
 /*  Not a pure module */

@@ -90,6 +90,10 @@ function readableColor(color, lightReturnColorOpt, darkReturnColorOpt, strictOpt
   return Polished.readableColor(color, lightReturnColor, darkReturnColor, strict);
 }
 
+function rgb(prim) {
+  return Polished.rgb(prim);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -111,4 +115,5 @@ exports.opacify = opacify;
 exports.parseToHsl = parseToHsl;
 exports.parseToRgb = parseToRgb;
 exports.readableColor = readableColor;
+exports.rgb = rgb;
 /* polished Not a pure module */
