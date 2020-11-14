@@ -1,15 +1,23 @@
 type color = string
 
 type contrastScores = {
-  "AA": bool,
-  "AALarge": bool,
-  "AAA": bool,
-  "AAALarge": bool,
+  "AA"      :  bool,
+  "AALarge" :  bool,
+  "AAA"     :  bool,
+  "AAALarge":  bool,
 }
 
-type hslColor = {"hue": float, "saturation": float, "lightness": float}
+type hslColor = {
+  "hue"       :  float,
+  "saturation":  float,
+  "lightness" :  float
+}
 
-type rgbColor = {"red": int, "green": int, "blue": int}
+type rgbColor = {
+  "red"  :  int,
+  "green":  int,
+  "blue" :  int
+}
 
 type rgbaColor = {"red": int, "green": int, "blue": int, "alpha": float}
 
@@ -30,7 +38,7 @@ external darken: (float, color) => color = "darken"
 let darken = (color, ~amount) => color |> darken(amount)
 
 @bs.module("polished") 
-external hsl: (int, float, float) => color = "hsl"
+external hsl: (float, float, float) => color = "hsl"
 let hsl = (~hue, ~saturation, ~lightness) => hsl(hue, saturation, lightness)
 
 @bs.module("polished")
@@ -58,7 +66,7 @@ external grayscale: color => color = "grayscale"
 let grayscale = grayscale
 
 @bs.module("polished")
-external hsla: (int, float, float, float) => color = "hsla"
+external hsla: (float, float, float, float) => color = "hsla"
 let hsla = (~hue, ~saturation, ~lightness, ~alpha) => 
   hsla(hue, saturation, lightness, alpha)
 

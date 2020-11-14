@@ -77,9 +77,9 @@ Jest.test("transparentize", (function (param) {
 
 Jest.test("hslToColorString", (function (param) {
         var hsl = {
-          hue: 359.61783439490443,
-          lightness: 0.6215686274509804,
-          saturation: 0.8134715025906737
+          hue: 240,
+          lightness: 1.0,
+          saturation: 0.5
         };
         return Jest.Expect.toBe("#ed5051", Jest.Expect.expect(Curry._1(Polished.Color.hslToColorString, hsl)));
       }));
@@ -94,9 +94,9 @@ Jest.test("opacify", (function (param) {
 
 Jest.test("parseToHsl", (function (param) {
         var expected = {
-          hue: 359.61783439490443,
-          lightness: 0.6215686274509804,
-          saturation: 0.8134715025906737
+          hue: 255,
+          lightness: 0,
+          saturation: 0
         };
         return Jest.Expect.toEqual(expected, Jest.Expect.expect(Curry._1(Polished.Color.parseToHsl, "#ed5051")));
       }));

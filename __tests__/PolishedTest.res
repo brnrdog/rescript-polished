@@ -33,7 +33,7 @@ test("darken", () => {
 })
 
 test("hsl", () => {
-  Color.hsl(~hue=30, ~saturation=0.5, ~lightness=0.3)
+  Color.hsl(~hue=30., ~saturation=0.5, ~lightness=0.3)
   -> expect
   |> toBe("#734d26")
 })
@@ -81,7 +81,7 @@ test("grayscale", () => {
 })
 
 test("hsla", () => {
-  -> Color.hsla(~hue=130, ~saturation=0.25, ~lightness=0.5, ~alpha=0.5)
+  -> Color.hsla(~hue=130., ~saturation=0.25, ~lightness=0.5, ~alpha=0.5)
   -> expect
   |> toBe("rgba(96,159,106,0.5)")
 })
@@ -115,10 +115,10 @@ test("transparentize", () => {
 })
 
 test("hslToColorString", () => {
-  let hsl: Color.hslColor = {
-    "hue": 359.61783439490443,
-    "lightness": 0.6215686274509804,
-    "saturation": 0.8134715025906737,
+  let hsl = {
+    "hue": 240.,
+    "lightness": 1.0,
+    "saturation": 0.5,
   }
 
   hsl
@@ -143,9 +143,9 @@ test("opacify", () => {
 
 test("parseToHsl", () => {
   let expected: Color.hslColor = {
-    "hue": 359.61783439490443,
-    "lightness": 0.6215686274509804,
-    "saturation": 0.8134715025906737,
+    "hue": 255.,
+    "lightness": 0.,
+    "saturation": 0.,
   }
 
   "#ed5051"

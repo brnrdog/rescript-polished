@@ -1,3 +1,3 @@
 module Color = {
-  include  Polished__Color
+  include Polished__Color
 }
