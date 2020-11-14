@@ -1,6 +1,8 @@
 open Jest
 open Expect;
 
+let keepGoing = _ => ()
+
 test("shade", () => {
   "#ed5051"
   -> Polished.shade(~amount=0.25)
@@ -162,4 +164,62 @@ test("parseToRgb", () => {
   -> Polished.parseToRgb
   -> expect
   |> toEqual(expected)
+})
+
+test("readableColor", () => {
+  "#ed5051"
+  -> Polished.readableColor(~strict=false, ())
+  -> expect
+  |> toBe("#fff")
+  |> keepGoing
+
+  "#000"
+  -> Polished.readableColor(())
+  -> expect
+  |> toBe("#000")
+  |> keepGoing
+
+  "black"
+  -> Polished.readableColor(~darkReturnColor="#ff8", ())
+  -> expect
+  |> toBe("#ff8")
+  |> keepGoing
+
+  "white"
+  -> Polished.readableColor(~lightReturnColor="#001", ())
+  -> expect
+  |> toBe("#001")
+  |> keepGoing
+
+  "red"
+  -> Polished.readableColor(
+    ~lightReturnColor = "#333",
+    ~darkReturnColor = "#ddd",
+    ~strict = true,
+    ()
+  )
+  -> expect
+  |> toBe("#000")
+  |> keepGoing
+
+  "yellow"
+  -> Polished.readableColor(
+    ~lightReturnColor = "#333",
+    ~darkReturnColor = "#ddd",
+    ~strict = true,
+    ()
+  )
+  -> expect
+  |> toBe("#333")
+  |> keepGoing
+
+  "blue"
+  -> Polished.readableColor(
+    ~lightReturnColor = "#333",
+    ~darkReturnColor = "#ddd",
+    ~strict = true,
+    ()
+  )
+  -> expect
+  |> toBe("#ddd")
 })

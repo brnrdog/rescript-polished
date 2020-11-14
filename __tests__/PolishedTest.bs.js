@@ -4,6 +4,10 @@
 var Jest = require("@glennsl/bs-jest/src/jest.bs.js");
 var Polished = require("../src/Polished.bs.js");
 
+function keepGoing(param) {
+  
+}
+
 Jest.test("shade", (function (param) {
         return Jest.Expect.toBe("#b13c3c", Jest.Expect.expect(Polished.shade("#ed5051", 0.25)));
       }));
@@ -105,4 +109,15 @@ Jest.test("parseToRgb", (function (param) {
         return Jest.Expect.toEqual(expected, Jest.Expect.expect(Polished.parseToRgb("#ed5051")));
       }));
 
+Jest.test("readableColor", (function (param) {
+        Jest.Expect.toBe("#fff", Jest.Expect.expect(Polished.readableColor("#ed5051", undefined, undefined, false, undefined)));
+        Jest.Expect.toBe("#000", Jest.Expect.expect(Polished.readableColor("#000", undefined, undefined, undefined, undefined)));
+        Jest.Expect.toBe("#ff8", Jest.Expect.expect(Polished.readableColor("black", undefined, "#ff8", undefined, undefined)));
+        Jest.Expect.toBe("#001", Jest.Expect.expect(Polished.readableColor("white", "#001", undefined, undefined, undefined)));
+        Jest.Expect.toBe("#000", Jest.Expect.expect(Polished.readableColor("red", "#333", "#ddd", true, undefined)));
+        Jest.Expect.toBe("#333", Jest.Expect.expect(Polished.readableColor("yellow", "#333", "#ddd", true, undefined)));
+        return Jest.Expect.toBe("#ddd", Jest.Expect.expect(Polished.readableColor("blue", "#333", "#ddd", true, undefined)));
+      }));
+
+exports.keepGoing = keepGoing;
 /*  Not a pure module */

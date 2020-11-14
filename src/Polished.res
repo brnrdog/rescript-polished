@@ -91,3 +91,13 @@ let parseToHsl = parseToHsl
 @bs.module("polished") 
 external parseToRgb: color => rgbColor = "parseToRgb"
 let parseToRgb = parseToRgb
+
+@bs.module("polished")
+external readableColor: (color, color, color, bool) => color = "readableColor"
+let readableColor = (
+  color, 
+  ~lightReturnColor="#fff", 
+  ~darkReturnColor="#000", 
+  ~strict=true, 
+  ()
+) => readableColor(color, lightReturnColor, darkReturnColor, strict)

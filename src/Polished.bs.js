@@ -83,6 +83,13 @@ function parseToRgb(prim) {
   return Polished.parseToRgb(prim);
 }
 
+function readableColor(color, lightReturnColorOpt, darkReturnColorOpt, strictOpt, param) {
+  var lightReturnColor = lightReturnColorOpt !== undefined ? lightReturnColorOpt : "#fff";
+  var darkReturnColor = darkReturnColorOpt !== undefined ? darkReturnColorOpt : "#000";
+  var strict = strictOpt !== undefined ? strictOpt : true;
+  return Polished.readableColor(color, lightReturnColor, darkReturnColor, strict);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -103,4 +110,5 @@ exports.mix = mix;
 exports.opacify = opacify;
 exports.parseToHsl = parseToHsl;
 exports.parseToRgb = parseToRgb;
+exports.readableColor = readableColor;
 /* polished Not a pure module */
