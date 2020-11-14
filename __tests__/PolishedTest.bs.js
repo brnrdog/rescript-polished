@@ -128,5 +128,15 @@ Jest.test("rgb", (function (param) {
         return Jest.Expect.toBe("#fff", Jest.Expect.expect(Polished.rgb(rgb)));
       }));
 
+Jest.test("rgba", (function (param) {
+        var rgba = {
+          red: 255,
+          green: 205,
+          blue: 100,
+          alpha: 0.7
+        };
+        return Jest.Expect.toBe("rgba(255,205,100,0.7)", Jest.Expect.expect(Polished.rgba(rgba)));
+      }));
+
 exports.keepGoing = keepGoing;
 /*  Not a pure module */

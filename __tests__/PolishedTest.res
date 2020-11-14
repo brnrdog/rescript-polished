@@ -236,3 +236,17 @@ test("rgb", () => {
   -> expect
   |> toBe("#fff")
 })
+
+test("rgba", () => {
+  let rgba: Polished.rgbaColor = {
+    "red": 255,
+    "green": 205,
+    "blue": 100,
+    "alpha": 0.7
+  }
+
+  rgba
+  -> Polished.rgba
+  -> expect
+  |> toBe("rgba(255,205,100,0.7)")
+})

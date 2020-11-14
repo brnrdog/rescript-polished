@@ -11,6 +11,8 @@ type hslColor = {"hue": float, "saturation": float, "lightness": float}
 
 type rgbColor = {"red": int, "green": int, "blue": int}
 
+type rgbaColor = {"red": int, "green": int, "blue": int, "alpha": float}
+
 @bs.module("polished") 
 external shade: (float, color) => color = "shade"
 let shade = (color, ~amount) => color |> shade(amount)
@@ -105,3 +107,7 @@ let readableColor = (
 @bs.module("polished")
 external rgb: rgbColor => color = "rgb"
 let rgb = rgb
+
+@bs.module("polished")
+external rgba: rgbaColor => color = "rgba"
+let rgba = rgba

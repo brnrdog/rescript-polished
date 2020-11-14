@@ -94,6 +94,10 @@ function rgb(prim) {
   return Polished.rgb(prim);
 }
 
+function rgba(prim) {
+  return Polished.rgba(prim);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -116,4 +120,5 @@ exports.parseToHsl = parseToHsl;
 exports.parseToRgb = parseToRgb;
 exports.readableColor = readableColor;
 exports.rgb = rgb;
+exports.rgba = rgba;
 /* polished Not a pure module */
