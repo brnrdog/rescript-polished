@@ -102,6 +102,18 @@ function saturate(color, amount) {
   return Polished.saturate(amount, color);
 }
 
+function setHue(color, hue) {
+  return Polished.setHue(hue, color);
+}
+
+function setLightness(color, lightness) {
+  return Polished.setLightness(lightness, color);
+}
+
+function setSaturation(color, saturation) {
+  return Polished.setSaturation(saturation, color);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -126,4 +138,7 @@ exports.readableColor = readableColor;
 exports.rgb = rgb;
 exports.rgba = rgba;
 exports.saturate = saturate;
+exports.setHue = setHue;
+exports.setLightness = setLightness;
+exports.setSaturation = setSaturation;
 /* polished Not a pure module */

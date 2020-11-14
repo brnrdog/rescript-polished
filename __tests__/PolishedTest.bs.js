@@ -42,7 +42,7 @@ Jest.test("desaturate", (function (param) {
       }));
 
 Jest.test("getContrast", (function (param) {
-        return Jest.Expect.toBe(3.58, Jest.Expect.expect(Curry._2(Polished.Color.getContrast, "#ed5051", "#ffffff")));
+        return Jest.Expect.toBe(3.58, Jest.Expect.expect(Curry._2(Polished.Color.getContrast, "#ed5051", "#fff")));
       }));
 
 Jest.test("getLuminance", (function (param) {
@@ -81,7 +81,7 @@ Jest.test("hslToColorString", (function (param) {
           lightness: 1.0,
           saturation: 0.5
         };
-        return Jest.Expect.toBe("#ed5051", Jest.Expect.expect(Curry._1(Polished.Color.hslToColorString, hsl)));
+        return Jest.Expect.toBe("#fff", Jest.Expect.expect(Curry._1(Polished.Color.hslToColorString, hsl)));
       }));
 
 Jest.test("mix", (function (param) {
@@ -94,11 +94,11 @@ Jest.test("opacify", (function (param) {
 
 Jest.test("parseToHsl", (function (param) {
         var expected = {
-          hue: 255,
-          lightness: 0,
-          saturation: 0
+          hue: 0.0,
+          lightness: 0.5,
+          saturation: 1.0
         };
-        return Jest.Expect.toEqual(expected, Jest.Expect.expect(Curry._1(Polished.Color.parseToHsl, "#ed5051")));
+        return Jest.Expect.toEqual(expected, Jest.Expect.expect(Curry._1(Polished.Color.parseToHsl, "#FF0000")));
       }));
 
 Jest.test("parseToRgb", (function (param) {
@@ -141,6 +141,18 @@ Jest.test("rgba", (function (param) {
 
 Jest.test("saturate", (function (param) {
         return Jest.Expect.toBe("#ff3e3f", Jest.Expect.expect(Curry._2(Polished.Color.saturate, "#ed5051", 0.5)));
+      }));
+
+Jest.test("setHue", (function (param) {
+        return Jest.Expect.toBe("#cdae64", Jest.Expect.expect(Curry._2(Polished.Color.setHue, "#CCCD64", 42)));
+      }));
+
+Jest.test("setLightness", (function (param) {
+        return Jest.Expect.toBe("#4d4d19", Jest.Expect.expect(Curry._2(Polished.Color.setLightness, "#CCCD64", 0.2)));
+      }));
+
+Jest.test("setSaturation", (function (param) {
+        return Jest.Expect.toBe("#adad84", Jest.Expect.expect(Curry._2(Polished.Color.setSaturation, "#CCCD64", 0.2)));
       }));
 
 exports.keepGoing = keepGoing;

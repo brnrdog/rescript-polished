@@ -61,7 +61,7 @@ test("desaturate", () => {
 
 test("getContrast", () => {
   "#ed5051"
-  -> Color.getContrast("#ffffff")
+  -> Color.getContrast("#fff")
   -> expect
   |> toBe(3.58)
 })
@@ -124,7 +124,7 @@ test("hslToColorString", () => {
   hsl
   -> Color.hslToColorString
   -> expect
-  |> toBe("#ed5051")
+  |> toBe("#fff")
 })
 
 test("mix", () => {
@@ -143,12 +143,12 @@ test("opacify", () => {
 
 test("parseToHsl", () => {
   let expected: Color.hslColor = {
-    "hue": 255.,
-    "lightness": 0.,
-    "saturation": 0.,
+    "hue": 0.0,
+    "lightness": 0.5,
+    "saturation": 1.0,
   }
 
-  "#ed5051"
+  "#FF0000"
   -> Color.parseToHsl
   -> expect
   |> toEqual(expected)
@@ -257,4 +257,25 @@ test("saturate", () => {
   -> Color.saturate(~amount=0.5)
   -> expect
   |> toBe("#ff3e3f")
+})
+
+test("setHue", () => {
+  "#CCCD64"
+  -> Color.setHue(~hue=42)
+  -> expect
+  |> toBe("#cdae64")
+})
+
+test("setLightness", () => {
+  "#CCCD64"
+  -> Color.setLightness(~lightness=0.2)
+  -> expect
+  |> toBe("#4d4d19")
+})
+
+test("setSaturation", () => {
+  "#CCCD64"
+  -> Color.setSaturation(~saturation=0.2)
+  -> expect
+  |> toBe("#adad84")
 })

@@ -123,3 +123,15 @@ let rgba = rgba
 @bs.module("polished")
 external saturate: (float, color) => color = "saturate"
 let saturate = (color, ~amount) => color |> saturate(amount)
+
+@bs.module("polished")
+external setHue: (int, color) => color = "setHue"
+let setHue = (color, ~hue) => color |> setHue(hue)
+
+@bs.module("polished")
+external setLightness: (float, color) => color = "setLightness"
+let setLightness = (color, ~lightness) => color |> setLightness(lightness)
+
+@bs.module("polished")
+external setSaturation: (float, color) => color = "setSaturation"
+let setSaturation = (color, ~saturation) => color |> setSaturation(saturation)
