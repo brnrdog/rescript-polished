@@ -26,12 +26,12 @@ external lighten: (float, color) => color = "lighten"
 let lighten = (color, ~amount) => color |> lighten(amount)
 
 @bs.module("polished") 
-external extDarken: (float, color) => color = "darken"
-let darken = (color, ~amount) => color |> extDarken(amount)
+external darken: (float, color) => color = "darken"
+let darken = (color, ~amount) => color |> darken(amount)
 
 @bs.module("polished") 
-external extHsl: (int, float, float) => color = "hsl"
-let hsl = (~hue, ~saturation, ~lightness) => extHsl(hue, saturation, lightness)
+external hsl: (int, float, float) => color = "hsl"
+let hsl = (~hue, ~saturation, ~lightness) => hsl(hue, saturation, lightness)
 
 @bs.module("polished")
 external extAdjustHue: (float, color) => color = "adjustHue"
@@ -42,12 +42,12 @@ external complement: color => color = "complement"
 let complement = complement
 
 @bs.module("polished")
-external extDesaturate: (float, color) => color = "desaturate"
-let desaturate = (color, ~amount) => color |> extDesaturate(amount)
+external desaturate: (float, color) => color = "desaturate"
+let desaturate = (color, ~amount) => color |> desaturate(amount)
 
 @bs.module("polished")
-external extGetContrast: (color, color) => float = "getContrast"
-let getContrast = (color1, color2) => extGetContrast(color1, color2)
+external getContrast: (color, color) => float = "getContrast"
+let getContrast = getContrast
 
 @bs.module("polished") 
 external getLuminance: color => float = "getLuminance"
@@ -111,3 +111,7 @@ let rgb = rgb
 @bs.module("polished")
 external rgba: rgbaColor => color = "rgba"
 let rgba = rgba
+
+@bs.module("polished")
+external saturate: (float, color) => color = "saturate"
+let saturate = (color, ~amount) => color |> saturate(amount)

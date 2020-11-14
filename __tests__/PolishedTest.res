@@ -250,3 +250,10 @@ test("rgba", () => {
   -> expect
   |> toBe("rgba(255,205,100,0.7)")
 })
+
+test("saturate", () => {
+  "#ed5051"
+  -> Polished.saturate(~amount=0.5)
+  -> expect
+  |> toBe("#ff3e3f")
+})

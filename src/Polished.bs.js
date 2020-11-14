@@ -35,8 +35,8 @@ function desaturate(color, amount) {
   return Polished.desaturate(amount, color);
 }
 
-function getContrast(color1, color2) {
-  return Polished.getContrast(color1, color2);
+function getContrast(prim, prim$1) {
+  return Polished.getContrast(prim, prim$1);
 }
 
 function getLuminance(prim) {
@@ -98,6 +98,10 @@ function rgba(prim) {
   return Polished.rgba(prim);
 }
 
+function saturate(color, amount) {
+  return Polished.saturate(amount, color);
+}
+
 exports.shade = shade;
 exports.tint = tint;
 exports.lighten = lighten;
@@ -121,4 +125,5 @@ exports.parseToRgb = parseToRgb;
 exports.readableColor = readableColor;
 exports.rgb = rgb;
 exports.rgba = rgba;
+exports.saturate = saturate;
 /* polished Not a pure module */
