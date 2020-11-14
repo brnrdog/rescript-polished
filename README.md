@@ -34,9 +34,9 @@ For better convenience in ReScript, these bindings were written in a data-first 
 open Polished
 
 let primaryColor      = "#ed5051"
-let primaryColorLight = primaryColor -> lighten(~amount=0.25) // #f9c4c4
-let primaryColorDark  = primaryColor -> darken(~amount=0.25) // #ac1213
-let secondaryColor    = primaryColor -> complement // #50edec
+let primaryColorLight = primaryColor -> Color.lighten(~amount=0.25) // #f9c4c4
+let primaryColorDark  = primaryColor -> Color.darken(~amount=0.25) // #ac1213
+let secondaryColor    = primaryColor -> Color.complement // #50edec
 ```
 
 
