@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "bs-platform": "^8.3.2",
-    "mem": "^4.0.0",
+    "mem": "^8.0.0",
     "polished": "^4.0.3"
   },
   "devDependencies": {
