@@ -1249,10 +1249,10 @@ browser-process-hrtime@^1.0.0:
   resolved "https://registry.yarnpkg.com/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz#3c9b4b7d782c8121e56f10106d84c0d0ffc94626"
   integrity sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==
 
-bs-platform@^8.3.2:
-  version "8.3.2"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-8.3.2.tgz#c307f1cc2d2397c3d088c7f3b62e9f493283cdcf"
-  integrity sha512-iOTi5JIlNPoCPq31NS9ET79FLyCpwTL2JZbgHz35LzY9Bch1iDtbBR3FVGhRbjphxelAP4fLlFONfUNp5Y3a5g==
+bs-platform@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-9.0.0.tgz#873e9edcfe49a89b082e71c604d73bdb8276e2fb"
+  integrity sha512-32gIXIUt1RO+OUWLrkhXFOuZKS5Cka6lEShXaVC/ohg5N8cUnoNZW9M/vW3CWnmgZkQ0Hp9g9vj5I5NfzHpy5A==
 
 bser@2.1.1:
   version "2.1.1"
