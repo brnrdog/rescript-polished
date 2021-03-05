@@ -1,11 +1,6 @@
 type color = string
 
-type contrastScores = {
-  "AA": bool,
-  "AALarge": bool,
-  "AAA": bool,
-  "AAALarge": bool,
-}
+type contrastScores = {"AA": bool, "AALarge": bool, "AAA": bool, "AAALarge": bool}
 
 type hslColor = {"hue": float, "saturation": float, "lightness": float}
 
@@ -59,16 +54,14 @@ let grayscale = grayscale
 
 @module("polished")
 external hsla: (float, float, float, float) => color = "hsla"
-let hsla = (~hue, ~saturation, ~lightness, ~alpha) =>
-  hsla(hue, saturation, lightness, alpha)
+let hsla = (~hue, ~saturation, ~lightness, ~alpha) => hsla(hue, saturation, lightness, alpha)
 
 @module("polished")
 external invert: color => color = "invert"
 let invert = invert
 
 @module("polished")
-external meetsContrastGuidelines: (color, color) => contrastScores =
-  "meetsContrastGuidelines"
+external meetsContrastGuidelines: (color, color) => contrastScores = "meetsContrastGuidelines"
 let meetsContrastGuidelines = meetsContrastGuidelines
 
 @module("polished")
@@ -97,13 +90,8 @@ let parseToRgb = parseToRgb
 
 @module("polished")
 external readableColor: (color, color, color, bool) => color = "readableColor"
-let readableColor = (
-  color,
-  ~lightReturnColor="#fff",
-  ~darkReturnColor="#000",
-  ~strict=true,
-  (),
-) => readableColor(color, lightReturnColor, darkReturnColor, strict)
+let readableColor = (color, ~lightReturnColor="#fff", ~darkReturnColor="#000", ~strict=true, ()) =>
+  readableColor(color, lightReturnColor, darkReturnColor, strict)
 
 @module("polished")
 external rgb: rgbColor => color = "rgb"
