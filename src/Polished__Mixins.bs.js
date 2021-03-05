@@ -33,9 +33,19 @@ function ellipsis(width, lines, param) {
   return Polished.ellipsis(Js_undefined.fromOption(width), lines);
 }
 
+function fluidRange(minScreen, maxScreen, cssProp) {
+  return Polished.fluidRange(cssProp, Js_undefined.fromOption(minScreen), Js_undefined.fromOption(maxScreen));
+}
+
+function fluidRangeWithArray(minScreen, maxScreen, cssProps) {
+  return Polished.fluidRange(cssProps, Js_undefined.fromOption(minScreen), Js_undefined.fromOption(maxScreen));
+}
+
 exports.Size = Size;
 exports.between = between;
 exports.clearFix = clearFix;
 exports.cover = cover;
 exports.ellipsis = ellipsis;
+exports.fluidRange = fluidRange;
+exports.fluidRangeWithArray = fluidRangeWithArray;
 /* polished Not a pure module */

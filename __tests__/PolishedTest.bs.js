@@ -153,8 +153,29 @@ Jest.describe("Mixins", (function (param) {
         Jest.test("cover", (function (param) {
                 return Jest.Expect.toMatchSnapshot(Jest.Expect.expect(Polished__Mixins.cover(Caml_option.some(Polished__Mixins.Size.makeString("16px")), undefined)));
               }));
-        return Jest.test("ellipsis", (function (param) {
-                      return Jest.Expect.toMatchSnapshot(Jest.Expect.expect(Polished__Mixins.ellipsis(Caml_option.some(Polished__Mixins.Size.makeString("16px")), 10, undefined)));
+        Jest.test("ellipsis", (function (param) {
+                return Jest.Expect.toMatchSnapshot(Jest.Expect.expect(Polished__Mixins.ellipsis(Caml_option.some(Polished__Mixins.Size.makeString("16px")), 10, undefined)));
+              }));
+        Jest.test("fluidRange", (function (param) {
+                return Jest.Expect.toMatchSnapshot(Jest.Expect.expect(Polished__Mixins.fluidRange("320px", "1024px", {
+                                    prop: "padding",
+                                    fromSize: Polished__Mixins.Size.makeString("20px"),
+                                    toSize: Polished__Mixins.Size.makeString("20px")
+                                  })));
+              }));
+        return Jest.test("fluidRangeWithArray", (function (param) {
+                      return Jest.Expect.toMatchSnapshot(Jest.Expect.expect(Polished__Mixins.fluidRangeWithArray("320px", "1024px", [
+                                          {
+                                            prop: "padding",
+                                            fromSize: Polished__Mixins.Size.makeString("16px"),
+                                            toSize: Polished__Mixins.Size.makeString("32px")
+                                          },
+                                          {
+                                            prop: "margin",
+                                            fromSize: Polished__Mixins.Size.makeString("16px"),
+                                            toSize: Polished__Mixins.Size.makeString("32px")
+                                          }
+                                        ])));
                     }));
       }));
 

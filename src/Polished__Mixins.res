@@ -5,6 +5,12 @@ module Size = {
   let makeFloat: float => t = i => Any(i)
 }
 
+type fluidRangeConfiguration = {
+  prop: string,
+  fromSize: Size.t,
+  toSize: Size.t,
+}
+
 @module("polished")
 external between: (
   ~fromSize: Size.t,
@@ -28,3 +34,29 @@ external ellipsis: (~width: Js.undefined<Size.t>, ~lines: option<int>) => 'style
 let ellipsis = (~width=?, ~lines=?, ()) => {
   ellipsis(~width=Js.Undefined.fromOption(width), ~lines)
 }
+
+@module("polished")
+external fluidRange: (
+  fluidRangeConfiguration,
+  ~minScreen: Js.undefined<string>,
+  ~maxScreen: Js.undefined<string>,
+) => 'styles = "fluidRange"
+let fluidRange = (~minScreen=?, ~maxScreen=?, cssProp) =>
+  fluidRange(
+    cssProp,
+    ~minScreen=Js.Undefined.fromOption(minScreen),
+    ~maxScreen=Js.Undefined.fromOption(maxScreen),
+  )
+
+@module("polished")
+external fluidRangeWithArray: (
+  array<fluidRangeConfiguration>,
+  ~minScreen: Js.undefined<string>,
+  ~maxScreen: Js.undefined<string>,
+) => 'styles = "fluidRange"
+let fluidRangeWithArray = (~minScreen=?, ~maxScreen=?, cssProps) =>
+  fluidRangeWithArray(
+    cssProps,
+    ~minScreen=Js.Undefined.fromOption(minScreen),
+    ~maxScreen=Js.Undefined.fromOption(maxScreen),
+  )

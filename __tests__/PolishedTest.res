@@ -213,4 +213,33 @@ describe("Mixins", () => {
   test("ellipsis", () => {
     ellipsis(~width=Size.makeString("16px"), ~lines=10, ())->expect |> toMatchSnapshot
   })
+
+  test("fluidRange", () => {
+    {
+      prop: "padding",
+      fromSize: Size.makeString("20px"),
+      toSize: Size.makeString("20px"),
+    }
+    ->fluidRange(~minScreen="320px", ~maxScreen="1024px")
+    ->expect
+    ->toMatchSnapshot
+  })
+
+  test("fluidRangeWithArray", () => {
+    [
+      {
+        prop: "padding",
+        fromSize: Size.makeString("16px"),
+        toSize: Size.makeString("32px"),
+      },
+      {
+        prop: "margin",
+        fromSize: Size.makeString("16px"),
+        toSize: Size.makeString("32px"),
+      },
+    ]
+    ->fluidRangeWithArray(~minScreen="320px", ~maxScreen="1024px")
+    ->expect
+    ->toMatchSnapshot
+  })
 })

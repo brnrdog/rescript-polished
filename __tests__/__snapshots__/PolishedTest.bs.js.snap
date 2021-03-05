@@ -34,3 +34,30 @@ Object {
   "wordWrap": "normal",
 }
 `;
+
+exports[`Mixins fluidRange 1`] = `
+Object {
+  "@media (min-width: 1024px)": Object {
+    "padding": "20px",
+  },
+  "@media (min-width: 320px)": Object {
+    "padding": "calc(20.00px + 0.00vw)",
+  },
+  "padding": "20px",
+}
+`;
+
+exports[`Mixins fluidRangeWithArray 1`] = `
+Object {
+  "@media (min-width: 1024px)": Object {
+    "margin": "32px",
+    "padding": "32px",
+  },
+  "@media (min-width: 320px)": Object {
+    "margin": "calc(8.73px + 2.27vw)",
+    "padding": "calc(8.73px + 2.27vw)",
+  },
+  "margin": "16px",
+  "padding": "16px",
+}
+`;
