@@ -1,9 +1,14 @@
-type size = [#Str(string) | #Number(float)]
+module Size = {
+  @unboxed
+  type rec t = Any('a): t
+  let makeString: string => t = s => Any(s)
+  let makeFloat: float => t = i => Any(i)
+}
 
 @module("polished")
 external between: (
-  ~fromSize: @unwrap [#Str(string) | #Number(float)],
-  ~toSize: @unwrap [#Str(string) | #Number(float)],
+  ~fromSize: Size.t,
+  ~toSize: Size.t,
   ~minScreen: option<string>,
   ~maxScreen: option<string>,
 ) => string = "between"
@@ -15,18 +20,11 @@ external clearFix: option<string> => 'styles = "clearFix"
 let clearFix = (~parent=?) => parent->clearFix
 
 @module("polished")
-external cover: (~offset: @unwrap [#Str(string) | #Number(float)]) => 'styles = "cover"
-let cover = (~offset=?, ()) => {
-  let offset = switch offset {
-  | None => #Number(0.)
-  | Some(offset) => offset
-  }
-
-  cover(~offset)
-}
+external cover: (~offset: Js.undefined<Size.t>) => 'styles = "cover"
+let cover = (~offset=?, ()) => cover(~offset=Js.Undefined.fromOption(offset))
 
 @module("polished")
-external ellipsis: (~width: option<string>, ~lines: option<int>) => 'styles = "ellipsis"
+external ellipsis: (~width: Js.undefined<Size.t>, ~lines: option<int>) => 'styles = "ellipsis"
 let ellipsis = (~width=?, ~lines=?, ()) => {
-  ellipsis(~width, ~lines)
+  ellipsis(~width=Js.Undefined.fromOption(width), ~lines)
 }

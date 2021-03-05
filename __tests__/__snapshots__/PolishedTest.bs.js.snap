@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mixins between 1`] = `"calc(-40.00px + 14.00vw)"`;
+
+exports[`Mixins clearfix 1`] = `
+Object {
+  "div::after": Object {
+    "clear": "both",
+    "content": "\\"\\"",
+    "display": "table",
+  },
+}
+`;
+
+exports[`Mixins cover 1`] = `
+Object {
+  "bottom": "16px",
+  "left": "16px",
+  "position": "absolute",
+  "right": "16px",
+  "top": "16px",
+}
+`;
+
+exports[`Mixins ellipsis 1`] = `
+Object {
+  "WebkitBoxOrient": "vertical",
+  "WebkitLineClamp": 10,
+  "display": "-webkit-box",
+  "maxWidth": "16px",
+  "overflow": "hidden",
+  "textOverflow": "ellipsis",
+  "whiteSpace": "normal",
+  "wordWrap": "normal",
+}
+`;

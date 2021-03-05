@@ -312,50 +312,31 @@ describe("Mixins", () => {
 
   test("between", () => {
     between(
-      ~fromSize=#Str("20px"), 
-      ~toSize=#Str("100px"), 
+      ~fromSize=Size.makeString("16px"), 
+      ~toSize=Size.makeString("100px"),
       ~minScreen="400px", 
       ~maxScreen="1000px", 
       ()
     )
     ->expect
-    |>toBe("calc(-33.33px + 13.33vw)")
+    |>toMatchSnapshot
   })
 
   test("clearfix", () => {
     clearFix(~parent="div")
     ->expect
-    |>toEqual({
-      "div::after": {
-        "clear": "both", 
-        "content": "\"\"", 
-        "display": "table"
-        }
-      })
+    |>toMatchSnapshot
   })
 
   test("cover", () => {
-    cover(~offset=#Str("16px"), ())
+    cover(~offset=Size.makeString("16px"), ())
     ->expect
-    |>toEqual({
-      "bottom": "16px",
-      "left": "16px",
-      "position": "absolute",
-      "right": "16px",
-      "top": "16px",
-    })
+    |>toMatchSnapshot
   })
 
   test("ellipsis", () => {
-    ellipsis(~width="16px", ())
+    ellipsis(~width=Size.makeString("16px"), ~lines=10, ())
     ->expect
-    |>toEqual({
-      "display": "inline-block",
-      "maxWidth": "16px",
-      "overflow": "hidden",
-      "textOverflow": "ellipsis",
-      "whiteSpace": "nowrap",
-      "wordWrap": "normal",
-    })
+    |>toMatchSnapshot
   })
 })

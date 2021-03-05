@@ -2,6 +2,7 @@
 'use strict';
 
 var Jest = require("@glennsl/bs-jest/lib/js/src/jest.bs.js");
+var Caml_option = require("bs-platform/lib/js/caml_option.js");
 var Polished__Math = require("../src/Polished__Math.bs.js");
 var Polished__Color = require("../src/Polished__Color.bs.js");
 var Polished__Mixins = require("../src/Polished__Mixins.bs.js");
@@ -144,44 +145,16 @@ Jest.describe("Math", (function (param) {
 
 Jest.describe("Mixins", (function (param) {
         Jest.test("between", (function (param) {
-                return Jest.Expect.toBe("calc(-33.33px + 13.33vw)", Jest.Expect.expect(Polished__Mixins.between("400px", "1000px", {
-                                    NAME: "Str",
-                                    VAL: "20px"
-                                  }, {
-                                    NAME: "Str",
-                                    VAL: "100px"
-                                  }, undefined)));
+                return Jest.Expect.toMatchSnapshot(Jest.Expect.expect(Polished__Mixins.between("400px", "1000px", Polished__Mixins.Size.makeString("16px"), Polished__Mixins.Size.makeString("100px"), undefined)));
               }));
         Jest.test("clearfix", (function (param) {
-                return Jest.Expect.toEqual({
-                            "div::after": {
-                              clear: "both",
-                              content: "\"\"",
-                              display: "table"
-                            }
-                          }, Jest.Expect.expect(Polished__Mixins.clearFix("div")));
+                return Jest.Expect.toMatchSnapshot(Jest.Expect.expect(Polished__Mixins.clearFix("div")));
               }));
         Jest.test("cover", (function (param) {
-                return Jest.Expect.toEqual({
-                            bottom: "16px",
-                            left: "16px",
-                            position: "absolute",
-                            right: "16px",
-                            top: "16px"
-                          }, Jest.Expect.expect(Polished__Mixins.cover({
-                                    NAME: "Str",
-                                    VAL: "16px"
-                                  }, undefined)));
+                return Jest.Expect.toMatchSnapshot(Jest.Expect.expect(Polished__Mixins.cover(Caml_option.some(Polished__Mixins.Size.makeString("16px")), undefined)));
               }));
         return Jest.test("ellipsis", (function (param) {
-                      return Jest.Expect.toEqual({
-                                  display: "inline-block",
-                                  maxWidth: "16px",
-                                  overflow: "hidden",
-                                  textOverflow: "ellipsis",
-                                  whiteSpace: "nowrap",
-                                  wordWrap: "normal"
-                                }, Jest.Expect.expect(Polished__Mixins.ellipsis("16px", undefined, undefined)));
+                      return Jest.Expect.toMatchSnapshot(Jest.Expect.expect(Polished__Mixins.ellipsis(Caml_option.some(Polished__Mixins.Size.makeString("16px")), 10, undefined)));
                     }));
       }));
 

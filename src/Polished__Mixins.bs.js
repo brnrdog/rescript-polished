@@ -2,9 +2,23 @@
 'use strict';
 
 var Polished = require("polished");
+var Js_undefined = require("bs-platform/lib/js/js_undefined.js");
+
+function makeString(s) {
+  return s;
+}
+
+function makeFloat(i) {
+  return i;
+}
+
+var Size = {
+  makeString: makeString,
+  makeFloat: makeFloat
+};
 
 function between(minScreen, maxScreen, fromSize, toSize, param) {
-  return Polished.between(fromSize.VAL, toSize.VAL, minScreen, maxScreen);
+  return Polished.between(fromSize, toSize, minScreen, maxScreen);
 }
 
 function clearFix(parent) {
@@ -12,18 +26,14 @@ function clearFix(parent) {
 }
 
 function cover(offset, param) {
-  return Polished.cover((
-              offset !== undefined ? offset : ({
-                    NAME: "Number",
-                    VAL: 0
-                  })
-            ).VAL);
+  return Polished.cover(Js_undefined.fromOption(offset));
 }
 
 function ellipsis(width, lines, param) {
-  return Polished.ellipsis(width, lines);
+  return Polished.ellipsis(Js_undefined.fromOption(width), lines);
 }
 
+exports.Size = Size;
 exports.between = between;
 exports.clearFix = clearFix;
 exports.cover = cover;
