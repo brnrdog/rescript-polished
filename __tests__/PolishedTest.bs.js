@@ -143,14 +143,23 @@ Jest.describe("Math", (function (param) {
       }));
 
 Jest.describe("Mixins", (function (param) {
-        return Jest.test("between", (function (param) {
-                      return Jest.Expect.toBe("calc(-33.33px + 13.33vw)", Jest.Expect.expect(Polished__Mixins.between("400px", "1000px", {
-                                          NAME: "Str",
-                                          VAL: "20px"
-                                        }, {
-                                          NAME: "Str",
-                                          VAL: "100px"
-                                        }, undefined)));
+        Jest.test("between", (function (param) {
+                return Jest.Expect.toBe("calc(-33.33px + 13.33vw)", Jest.Expect.expect(Polished__Mixins.between("400px", "1000px", {
+                                    NAME: "Str",
+                                    VAL: "20px"
+                                  }, {
+                                    NAME: "Str",
+                                    VAL: "100px"
+                                  }, undefined)));
+              }));
+        return Jest.test("clearfix", (function (param) {
+                      return Jest.Expect.toEqual({
+                                  "div::after": {
+                                    clear: "both",
+                                    content: "\"\"",
+                                    display: "table"
+                                  }
+                                }, Jest.Expect.expect(Polished__Mixins.clearFix("div")));
                     }));
       }));
 

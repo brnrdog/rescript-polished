@@ -2,10 +2,16 @@
 'use strict';
 
 var Polished = require("polished");
+var Js_undefined = require("bs-platform/lib/js/js_undefined.js");
 
 function between(minScreen, maxScreen, fromSize, toSize, param) {
   return Polished.between(fromSize.VAL, toSize.VAL, minScreen, maxScreen);
 }
 
+function clearFix(parent) {
+  return Polished.clearFix(Js_undefined.fromOption(parent));
+}
+
 exports.between = between;
+exports.clearFix = clearFix;
 /* polished Not a pure module */

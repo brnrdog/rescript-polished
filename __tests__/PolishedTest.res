@@ -321,4 +321,16 @@ describe("Mixins", () => {
     ->expect
     |>toBe("calc(-33.33px + 13.33vw)")
   })
+
+  test("clearfix", () => {
+    clearFix(~parent="div")
+    ->expect
+    |>toEqual({
+      "div::after": {
+        "clear": "both", 
+        "content": "\"\"", 
+        "display": "table"
+        }
+      })
+  })
 })

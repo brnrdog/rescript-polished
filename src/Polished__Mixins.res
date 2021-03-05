@@ -9,3 +9,7 @@ external between: (
 ) => string = "between"
 let between = (~minScreen=?, ~maxScreen=?, ~fromSize, ~toSize, ()) =>
   between(~fromSize, ~toSize, ~minScreen, ~maxScreen)
+
+@module("polished")
+external clearFix: Js.undefined<string> => 'style = "clearFix"
+let clearFix = (~parent=?) => parent->Js.Undefined.fromOption->clearFix
