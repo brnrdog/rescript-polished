@@ -333,4 +333,16 @@ describe("Mixins", () => {
         }
       })
   })
+
+  test("cover", () => {
+    cover(~offset=#Str("16px"), ())
+    ->expect
+    |>toEqual({
+      "bottom": "16px",
+      "left": "16px",
+      "position": "absolute",
+      "right": "16px",
+      "top": "16px",
+    })
+  })
 })

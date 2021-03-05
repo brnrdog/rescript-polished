@@ -152,14 +152,26 @@ Jest.describe("Mixins", (function (param) {
                                     VAL: "100px"
                                   }, undefined)));
               }));
-        return Jest.test("clearfix", (function (param) {
+        Jest.test("clearfix", (function (param) {
+                return Jest.Expect.toEqual({
+                            "div::after": {
+                              clear: "both",
+                              content: "\"\"",
+                              display: "table"
+                            }
+                          }, Jest.Expect.expect(Polished__Mixins.clearFix("div")));
+              }));
+        return Jest.test("cover", (function (param) {
                       return Jest.Expect.toEqual({
-                                  "div::after": {
-                                    clear: "both",
-                                    content: "\"\"",
-                                    display: "table"
-                                  }
-                                }, Jest.Expect.expect(Polished__Mixins.clearFix("div")));
+                                  bottom: "16px",
+                                  left: "16px",
+                                  position: "absolute",
+                                  right: "16px",
+                                  top: "16px"
+                                }, Jest.Expect.expect(Polished__Mixins.cover({
+                                          NAME: "Str",
+                                          VAL: "16px"
+                                        }, undefined)));
                     }));
       }));
 

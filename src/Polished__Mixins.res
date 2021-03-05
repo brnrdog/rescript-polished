@@ -1,4 +1,4 @@
-type size = string
+type size = [#Str(string) | #Number(float)]
 
 @module("polished")
 external between: (
@@ -11,5 +11,16 @@ let between = (~minScreen=?, ~maxScreen=?, ~fromSize, ~toSize, ()) =>
   between(~fromSize, ~toSize, ~minScreen, ~maxScreen)
 
 @module("polished")
-external clearFix: Js.undefined<string> => 'style = "clearFix"
-let clearFix = (~parent=?) => parent->Js.Undefined.fromOption->clearFix
+external clearFix: option<string> => 'styles = "clearFix"
+let clearFix = (~parent=?) => parent->clearFix
+
+@module("polished")
+external cover: (~offset: @unwrap [#Str(string) | #Number(float)]) => 'styles = "cover"
+let cover = (~offset=?, ()) => {
+  let offset = switch offset {
+  | None => #Number(0.)
+  | Some(offset) => offset
+  }
+
+  cover(~offset)
+}
