@@ -345,4 +345,17 @@ describe("Mixins", () => {
       "top": "16px",
     })
   })
+
+  test("ellipsis", () => {
+    ellipsis(~width="16px", ())
+    ->expect
+    |>toEqual({
+      "display": "inline-block",
+      "maxWidth": "16px",
+      "overflow": "hidden",
+      "textOverflow": "ellipsis",
+      "whiteSpace": "nowrap",
+      "wordWrap": "normal",
+    })
+  })
 })

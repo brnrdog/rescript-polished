@@ -20,7 +20,12 @@ function cover(offset, param) {
             ).VAL);
 }
 
+function ellipsis(width, lines, param) {
+  return Polished.ellipsis(width, lines);
+}
+
 exports.between = between;
 exports.clearFix = clearFix;
 exports.cover = cover;
+exports.ellipsis = ellipsis;
 /* polished Not a pure module */

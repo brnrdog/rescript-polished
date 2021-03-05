@@ -161,17 +161,27 @@ Jest.describe("Mixins", (function (param) {
                             }
                           }, Jest.Expect.expect(Polished__Mixins.clearFix("div")));
               }));
-        return Jest.test("cover", (function (param) {
+        Jest.test("cover", (function (param) {
+                return Jest.Expect.toEqual({
+                            bottom: "16px",
+                            left: "16px",
+                            position: "absolute",
+                            right: "16px",
+                            top: "16px"
+                          }, Jest.Expect.expect(Polished__Mixins.cover({
+                                    NAME: "Str",
+                                    VAL: "16px"
+                                  }, undefined)));
+              }));
+        return Jest.test("ellipsis", (function (param) {
                       return Jest.Expect.toEqual({
-                                  bottom: "16px",
-                                  left: "16px",
-                                  position: "absolute",
-                                  right: "16px",
-                                  top: "16px"
-                                }, Jest.Expect.expect(Polished__Mixins.cover({
-                                          NAME: "Str",
-                                          VAL: "16px"
-                                        }, undefined)));
+                                  display: "inline-block",
+                                  maxWidth: "16px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                  wordWrap: "normal"
+                                }, Jest.Expect.expect(Polished__Mixins.ellipsis("16px", undefined, undefined)));
                     }));
       }));
 

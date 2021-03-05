@@ -24,3 +24,9 @@ let cover = (~offset=?, ()) => {
 
   cover(~offset)
 }
+
+@module("polished")
+external ellipsis: (~width: option<string>, ~lines: option<int>) => 'styles = "ellipsis"
+let ellipsis = (~width=?, ~lines=?, ()) => {
+  ellipsis(~width, ~lines)
+}
