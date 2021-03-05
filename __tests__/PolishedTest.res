@@ -306,3 +306,19 @@ describe("Math", () => {
     |> toThrow
   })
 })
+
+describe("Mixins", () => {
+  open Mixins
+
+  test("between", () => {
+    between(
+      ~fromSize=#Str("20px"), 
+      ~toSize=#Str("100px"), 
+      ~minScreen="400px", 
+      ~maxScreen="1000px", 
+      ()
+    )
+    ->expect
+    |>toBe("calc(-33.33px + 13.33vw)")
+  })
+})
