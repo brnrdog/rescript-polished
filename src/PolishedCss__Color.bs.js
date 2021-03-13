@@ -7,6 +7,8 @@ var Caml_option = require("bs-platform/lib/js/caml_option.js");
 var Css_AtomicTypes = require("bs-css/src/Css_AtomicTypes.bs.js");
 var Polished__Color = require("./Polished__Color.bs.js");
 
+var regex = "rgba\\(\\s*(-?\\d+|-?\\d*\\.\\d+(?=%))\\s*,\\s*(-?\\d+|-?\\d*\\.\\d+(?=%))\\s*,\\s*(-?\\d+|-?\\d*\\.\\d+(?=%))\\s*,\\s*(-?\\d+|-?\\d*.\\d+)\\s*\\)";
+
 function rgbaRegexGroups(param, i) {
   return [
             1,
@@ -24,8 +26,8 @@ function alphaValue(v) {
   return Caml_format.caml_float_of_string((v == null) ? undefined : Caml_option.some(v));
 }
 
-function toRgba(string) {
-  var values = Caml_option.null_to_opt(new RegExp("rgba\\(\\s*(-?\\d+|-?\\d*\\.\\d+(?=%))\\s*,\\s*(-?\\d+|-?\\d*\\.\\d+(?=%))\\s*,\\s*(-?\\d+|-?\\d*\\.\\d+(?=%))\\s*,\\s*(-?\\d+|-?\\d*.\\d+)\\s*\\)").exec(string)).filter(rgbaRegexGroups);
+function fromString(string) {
+  var values = Caml_option.null_to_opt(new RegExp(regex).exec(string)).filter(rgbaRegexGroups);
   var red = Caml_format.caml_int_of_string(Caml_option.nullable_to_opt(Caml_array.get(values, 0)));
   var green = Caml_format.caml_int_of_string(Caml_option.nullable_to_opt(Caml_array.get(values, 1)));
   var blue = Caml_format.caml_int_of_string(Caml_option.nullable_to_opt(Caml_array.get(values, 2)));
@@ -36,13 +38,50 @@ function toRgba(string) {
             });
 }
 
-function transparentize(color, amount) {
-  return toRgba(Polished__Color.transparentize(color, amount));
+var Rgba = {
+  regex: regex,
+  rgbaRegexGroups: rgbaRegexGroups,
+  rgbValue: rgbValue,
+  alphaValue: alphaValue,
+  fromString: fromString
+};
+
+function fromString$1(string) {
+  return {
+          NAME: "hex",
+          VAL: string.slice(1, -1)
+        };
 }
 
-exports.rgbaRegexGroups = rgbaRegexGroups;
-exports.rgbValue = rgbValue;
-exports.alphaValue = alphaValue;
-exports.toRgba = toRgba;
+var Hex = {
+  fromString: fromString$1
+};
+
+function shade(color, amount) {
+  return fromString$1(Polished__Color.shade(color, amount));
+}
+
+function tint(color, amount) {
+  return fromString$1(Polished__Color.tint(color, amount));
+}
+
+function lighten(color, amount) {
+  return fromString$1(Polished__Color.lighten(color, amount));
+}
+
+function darken(color, amount) {
+  return fromString$1(Polished__Color.darken(color, amount));
+}
+
+function transparentize(color, amount) {
+  return fromString(Polished__Color.transparentize(color, amount));
+}
+
+exports.Rgba = Rgba;
+exports.Hex = Hex;
+exports.shade = shade;
+exports.tint = tint;
+exports.lighten = lighten;
+exports.darken = darken;
 exports.transparentize = transparentize;
 /* Polished__Color Not a pure module */

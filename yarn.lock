@@ -1284,6 +1284,11 @@ browser-process-hrtime@^1.0.0:
   resolved "https://registry.yarnpkg.com/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz#3c9b4b7d782c8121e56f10106d84c0d0ffc94626"
   integrity sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==
 
+bs-css@^13.4.0:
+  version "13.4.0"
+  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-13.4.0.tgz#0918841c2812b0ae0ce1c9c569b98347ae25aa48"
+  integrity sha512-/vmbAeccXdngc9Ky2rXYtEoO9C5cqgrlUjnoseltFjY5S+HaI2PBFw+bIJ+pp5iTaJmn5Ip3cNj+Vsdex4ULaA==
+
 bs-platform@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-9.0.1.tgz#069dae007aadb400963cec25c8349ea1f3f6cae0"
