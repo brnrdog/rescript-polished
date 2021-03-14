@@ -11,11 +11,6 @@
       "type": "dev"
     }
   ],
-  "package-specs": {
-    "module": "commonjs",
-    "in-source": true
-  },
-  "suffix": ".bs.js",
   "bs-dev-dependencies": ["@glennsl/bs-jest"],
   "bs-dependencies": ["bs-css"],
   "warnings": {
