@@ -2,9 +2,9 @@
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/brnrdog/rescript-polished/Release?style=flat-square)
 [![npm](https://img.shields.io/npm/v/rescript-polished?style=flat-square)](https://www.npmjs.com/package/rescript-polished)
-[![codecov](https://codecov.io/gh/brnrdog/rescript-polished/branch/master/graph/badge.svg?token=GtTOH4bMML)](https://codecov.io/gh/brnrdog/rescript-polished)
+[![Codecov](https://img.shields.io/codecov/c/github/brnrdog/rescript-polished?style=flat-square)](https://codecov.io/gh/brnrdog/rescript-polished)
 
-Bindings for [polished](https://polished.js.org/), _a lightweight toolset for writing styles in JavaScript_, __now in ReScript__ ✨.
+Bindings for [polished](https://polished.js.org/), _a lightweight toolset for writing styles in JavaScript_, **now in ReScript** ✨.
 
 **Note:** these bindings are still under development, check the [Polished](https://github.com/brnrdog/rescript-polished/blob/master/src/Polished.res) module to see the available functions.
 
@@ -38,7 +38,6 @@ let primaryColorLight = primaryColor -> Color.lighten(~amount=0.25) // #f9c4c4
 let primaryColorDark  = primaryColor -> Color.darken(~amount=0.25) // #ac1213
 let secondaryColor    = primaryColor -> Color.complement // #50edec
 ```
-
 
 ## License
 
