@@ -39,6 +39,22 @@ let primaryColorDark  = primaryColor -> Color.darken(~amount=0.25) // #ac1213
 let secondaryColor    = primaryColor -> Color.complement // #50edec
 ```
 
+If you're using `bs-css` or `bs-css-emotion`, you can use `PolishedCss`:
+
+```rescript
+module Style = {
+  open CssJs
+  open PolishedCss
+
+  let primary = #hex("e6484f")
+
+  let button = style(. [
+    background(primary),
+    hover([background(primary->Color.lighten(0.25))])
+  ])
+}
+```
+
 ## License
 
 MIT

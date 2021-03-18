@@ -8,19 +8,19 @@ describe("Color", () => {
   open Color
 
   test("shade", () => {
-    #hex("ff0000")->shade(~amount=0.25)->expect->toEqual(#hex("bf000"))
+    #hex("ff0000")->shade(~amount=0.25)->expect->toEqual(#hex("bf0000"))
   })
 
   test("tint", () => {
-    #hex("ff0000")->tint(~amount=0.25)->expect->toEqual(#hex("ff3f3"))
+    #hex("ff0000")->tint(~amount=0.25)->expect->toEqual(#hex("ff3f3f"))
   })
 
   test("darken", () => {
-    #hex("ff0000")->darken(~amount=0.25)->expect->toEqual(#hex("80000"))
+    #hex("ff0000")->darken(~amount=0.25)->expect->toEqual(#hex("800000"))
   })
 
   test("lighten", () => {
-    #hex("ff0000")->lighten(~amount=0.25)->expect->toEqual(#hex("ff808"))
+    #hex("ff0000")->lighten(~amount=0.25)->expect->toEqual(#hex("ff8080"))
   })
 
   test("transparentize", () => {

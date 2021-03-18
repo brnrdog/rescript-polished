@@ -25,7 +25,7 @@ module Rgba = {
 }
 
 module Hex = {
-  let fromString = string => #hex(string->Js.String2.slice(~from=1, ~to_=-1))
+  let fromString = string => #hex(string->Js.String2.slice(~from=1, ~to_=Js.String.length(string)))
   let toString = hex =>
     switch hex {
     | #hex(str) => "#" ++ str
