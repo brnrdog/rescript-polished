@@ -6,6 +6,16 @@
   "repository": "https://github.com/brnrdog/rescript-polished",
   "author": "Bernardo Gurgel <brnrdog@hey.com>",
   "license": "MIT",
+  "keywords": [
+    "rescript",
+    "polished",
+    "color",
+    "css-in-js",
+    "color manipulate",
+    "color manipulation",
+    "colour",
+    "styled-components"
+  ],
   "scripts": {
     "res:start": "bsb -make-world -w",
     "res:build": "bsb -make-world",
