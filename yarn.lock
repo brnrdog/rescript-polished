@@ -1250,9 +1250,9 @@ browser-process-hrtime@^1.0.0:
   integrity sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==
 
 bs-css@^13.4.0:
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-13.4.0.tgz#0918841c2812b0ae0ce1c9c569b98347ae25aa48"
-  integrity sha512-/vmbAeccXdngc9Ky2rXYtEoO9C5cqgrlUjnoseltFjY5S+HaI2PBFw+bIJ+pp5iTaJmn5Ip3cNj+Vsdex4ULaA==
+  version "13.4.1"
+  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-13.4.1.tgz#7b581ca6f7cb7f5d279cf30846a59d92563a9d04"
+  integrity sha512-S/YEKt/7/1olb52fAZNssDNYMaH5mKi/oVXBSq432uFJN+6hkl9/c+CdM7nnQVWdwDkC3CrbuOaj7fLee+oYxQ==
 
 bs-platform@^9.0.1:
   version "9.0.2"
