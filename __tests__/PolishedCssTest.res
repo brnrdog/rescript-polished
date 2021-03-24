@@ -29,4 +29,28 @@ describe("Color", () => {
     ->expect
     ->toEqual(Rgba.fromString("rgba(255, 0, 0, 0.5)"))
   })
+
+  test("getContrast", () => {
+    #hex("ff0000")->getContrast(#hex("0000ff"))->expect->toEqual(2.16)
+  })
+
+  test("getLuminance", () => {
+    #hex("ff0000")->getLuminance->expect->toEqual(0.213)
+  })
+
+  test("grayscale", () => {
+    #hex("ff0000")->grayscale->expect->toEqual(#hex("808080"))
+  })
+
+  test("desaturate", () => {
+    #hex("ff0000")->desaturate(~amount=0.3)->expect->toEqual(#hex("d92626"))
+  })
+
+  test("complement", () => {
+    #hex("ff0000")->complement->expect->toEqual(#hex("0ff"))
+  })
+
+  test("adjustHue", () => {
+    #hex("ff0000")->adjustHue(~degree=0.3)->expect->toEqual(#hex("ff0100"))
+  })
 })

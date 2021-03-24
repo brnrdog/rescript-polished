@@ -44,3 +44,17 @@ let darken = (color, ~amount) =>
 
 let transparentize = (color, ~amount) =>
   color->Hex.toString->Polished__Color.transparentize(~amount)->Rgba.fromString
+
+let getContrast = (c1, c2) => c1->Hex.toString->Polished__Color.getContrast(c2->Hex.toString)
+
+let getLuminance = color => color->Hex.toString->Polished__Color.getLuminance
+
+let grayscale = color => color->Hex.toString->Polished__Color.grayscale->Hex.fromString
+
+let desaturate = (color, ~amount) =>
+  color->Hex.toString->Polished__Color.desaturate(~amount)->Hex.fromString
+
+let complement = color => color->Hex.toString->Polished__Color.complement->Hex.fromString
+
+let adjustHue = (color, ~degree) =>
+  color->Hex.toString->Polished__Color.adjustHue(~degree)->Hex.fromString
