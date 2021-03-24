@@ -35,7 +35,8 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "<rootDir>/lib/js/src/**/*.js"
+      "<rootDir>/lib/js/src/**/*.js",
+      "!<rootDir>lib/js/src/Polished.js"
     ],
     "verbose": true
   }
