@@ -33,10 +33,10 @@ For better convenience in ReScript, these bindings were written in a data-first 
 ```rescript
 open Polished
 
-let primaryColor      = "#ed5051"
-let primaryColorLight = primaryColor -> Color.lighten(~amount=0.25) // #f9c4c4
-let primaryColorDark  = primaryColor -> Color.darken(~amount=0.25) // #ac1213
-let secondaryColor    = primaryColor -> Color.complement // #50edec
+let primaryColor = "#ed5051"
+let primaryColorLight = primaryColor->Color.lighten(~amount=0.25) // #f9c4c4
+let primaryColorDark = primaryColor->Color.darken(~amount=0.25) // #ac1213
+let secondaryColor = primaryColor->Color.complement // #50edec
 ```
 
 If you're using `bs-css` or `bs-css-emotion`, you can use `PolishedCss`:
@@ -46,11 +46,20 @@ module Style = {
   open CssJs
   open PolishedCss
 
-  let primary = #hex("e6484f")
+  let primary = #hex("e6484f") // or any possible Css_AtomicTypes.Color.t
 
   let button = style(. [
     background(primary),
     hover([background(primary->Color.lighten(0.25))])
+    active([background(primary->Color.darken(0.25)]),
+    focus([
+      boxShadow(
+        Shadow.box(
+          primary->Color.transparentize(~amount=0.8),
+          ~spread=#rem(0.25),
+        ),
+      ),
+    ]),
   ])
 }
 ```
