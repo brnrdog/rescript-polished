@@ -16,10 +16,10 @@ describe("Color", () => {
   })
 
   test("shade with rgba", () => {
-    Css_AtomicTypes.Color.rgba(255, 0, 0, #num(25.0))
+    Css_AtomicTypes.Color.rgba(255, 0, 0, #num(0.25))
     ->shade(~amount=0.25)
     ->expect
-    ->toEqual(#hex("16f0000"))
+    ->toEqual(Css_AtomicTypes.Color.rgba(76, 0, 0, #num(0.4375)))
   })
 
   test("tint with hex", () => {
@@ -42,7 +42,7 @@ describe("Color", () => {
     #hex("ff0000")
     ->transparentize(~amount=0.5)
     ->expect
-    ->toEqual(Rgba.fromString("rgba(255, 0, 0, 0.5)"))
+    ->toEqual(Utils.Rgba.fromString("rgba(255, 0, 0, 0.5)"))
   })
 
   test("getContrast with hex", () => {
@@ -67,5 +67,17 @@ describe("Color", () => {
 
   test("adjustHue with hex", () => {
     #hex("ff0000")->adjustHue(~degree=0.3)->expect->toEqual(#hex("ff0100"))
+  })
+
+  describe("Utils", () => {
+    open Color.Utils
+
+    test("fromString with hex", () => {
+      "#ff0000"->fromString->expect->toEqual(#hex("ff0000"))
+    })
+
+    test("fromString with rgba", () => {
+      "rgba(255, 0, 0, 0.5)"->fromString->expect->toEqual(#rgba(255, 0, 0, #num(0.5)))
+    })
   })
 })
