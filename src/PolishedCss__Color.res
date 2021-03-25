@@ -1,3 +1,5 @@
+let colorToString = Css_AtomicTypes.Color.toString
+
 module Rgba = {
   open Css_AtomicTypes
 
@@ -26,35 +28,33 @@ module Rgba = {
 
 module Hex = {
   let fromString = string => #hex(string->Js.String2.slice(~from=1, ~to_=Js.String.length(string)))
-  let toString = hex =>
-    switch hex {
-    | #hex(str) => "#" ++ str
-    }
 }
 
-let shade = (color, ~amount) => color->Hex.toString->Polished__Color.shade(~amount)->Hex.fromString
+let shade = (color, ~amount) => {
+  color->Css_AtomicTypes.Color.toString->Polished__Color.shade(~amount)->Hex.fromString
+}
 
-let tint = (color, ~amount) => color->Hex.toString->Polished__Color.tint(~amount)->Hex.fromString
+let tint = (color, ~amount) => color->colorToString->Polished__Color.tint(~amount)->Hex.fromString
 
 let lighten = (color, ~amount) =>
-  color->Hex.toString->Polished__Color.lighten(~amount)->Hex.fromString
+  color->colorToString->Polished__Color.lighten(~amount)->Hex.fromString
 
 let darken = (color, ~amount) =>
-  color->Hex.toString->Polished__Color.darken(~amount)->Hex.fromString
+  color->colorToString->Polished__Color.darken(~amount)->Hex.fromString
 
 let transparentize = (color, ~amount) =>
-  color->Hex.toString->Polished__Color.transparentize(~amount)->Rgba.fromString
+  color->colorToString->Polished__Color.transparentize(~amount)->Rgba.fromString
 
-let getContrast = (c1, c2) => c1->Hex.toString->Polished__Color.getContrast(c2->Hex.toString)
+let getContrast = (c1, c2) => c1->colorToString->Polished__Color.getContrast(c2->colorToString)
 
-let getLuminance = color => color->Hex.toString->Polished__Color.getLuminance
+let getLuminance = color => color->colorToString->Polished__Color.getLuminance
 
-let grayscale = color => color->Hex.toString->Polished__Color.grayscale->Hex.fromString
+let grayscale = color => color->colorToString->Polished__Color.grayscale->Hex.fromString
 
 let desaturate = (color, ~amount) =>
-  color->Hex.toString->Polished__Color.desaturate(~amount)->Hex.fromString
+  color->colorToString->Polished__Color.desaturate(~amount)->Hex.fromString
 
-let complement = color => color->Hex.toString->Polished__Color.complement->Hex.fromString
+let complement = color => color->colorToString->Polished__Color.complement->Hex.fromString
 
 let adjustHue = (color, ~degree) =>
-  color->Hex.toString->Polished__Color.adjustHue(~degree)->Hex.fromString
+  color->colorToString->Polished__Color.adjustHue(~degree)->Hex.fromString
