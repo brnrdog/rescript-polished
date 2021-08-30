@@ -1704,10 +1704,10 @@ browserslist@^4.16.6:
     escalade "^3.1.1"
     node-releases "^1.1.71"
 
-bs-css@^14.0.1:
-  version "14.0.2"
-  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-14.0.2.tgz#21786202533b66c0da5bbb3de9d0491b263d7e44"
-  integrity sha512-Dr3zr/xgBdxpwZHaYRq2+gf8V1qFDFVU+qLU9P/0zf7/uYhXMwJuvXFA/o1VCV2U5cEu+lywngXHo/BCEBcNpg==
+bs-css@^15.0.1:
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-15.0.1.tgz#01dc8c1aad5410ca84e7c42e5e4ac571fb25faf9"
+  integrity sha512-lDeOCRwqi8Kb54zqDmaXaX7/iiR7Dw8LvV2V9A/Olm+4yzASg9xSzmCCM5lOBZJpvJcCK7vvJevSQhaKixvWMg==
 
 bs-platform@^9.0.1:
   version "9.0.2"

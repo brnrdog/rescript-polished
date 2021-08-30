@@ -24,7 +24,7 @@
     "test:ci": "jest --collect-coverage"
   },
   "dependencies": {
-    "bs-css": "^14.0.1",
+    "bs-css": "^15.0.1",
     "bs-platform": "^9.0.1",
     "polished": "^4.0.3"
   },
