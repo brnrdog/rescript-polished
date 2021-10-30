@@ -17,16 +17,16 @@
     "styled-components"
   ],
   "scripts": {
-    "res:start": "bsb -make-world -w",
-    "res:build": "bsb -make-world",
-    "res:clean": "bsb -clean-world",
+    "res:start": "rescript build -w",
+    "res:build": "rescript build -with-deps",
+    "res:clean": "rescript clean -with-deps",
     "test": "jest",
     "test:ci": "jest --collect-coverage"
   },
   "dependencies": {
     "bs-css": "^15.0.1",
-    "bs-platform": "^9.0.1",
-    "polished": "^4.0.3"
+    "polished": "^4.0.3",
+    "rescript": "^9.1.4"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.7.0",
@@ -35,7 +35,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "<rootDir>/lib/js/src/**/*.js",
+      "<rootDir>/{lib/js/src/**/*.js",
       "!<rootDir>/lib/js/src/Polished.js",
       "!<rootDir>/lib/js/src/PolishedCss.js"
     ],
