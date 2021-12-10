@@ -1843,9 +1843,9 @@ browserslist@^4.16.6:
     node-releases "^1.1.71"
 
 bs-css@^15.0.1:
-  version "15.0.1"
-  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-15.0.1.tgz#01dc8c1aad5410ca84e7c42e5e4ac571fb25faf9"
-  integrity sha512-lDeOCRwqi8Kb54zqDmaXaX7/iiR7Dw8LvV2V9A/Olm+4yzASg9xSzmCCM5lOBZJpvJcCK7vvJevSQhaKixvWMg==
+  version "15.0.2"
+  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-15.0.2.tgz#b5feddabe3e428d7ddd6876f6e6a55e97ff3fe2e"
+  integrity sha512-wjd8kj1zQDdMTnoYbhawVPlt/qdxjp2ZK7n8u2ykVJ9aYeK3i/0EvEX572pbq8RmmG3PAsLERLyQtq43k3dY3g==
 
 bser@2.1.1:
   version "2.1.1"
