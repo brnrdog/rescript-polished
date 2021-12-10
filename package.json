@@ -16,6 +16,11 @@
     "colour",
     "styled-components"
   ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "scripts": {
     "res:start": "rescript build -w",
     "res:build": "rescript build -with-deps",
