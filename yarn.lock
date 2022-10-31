@@ -2038,9 +2038,9 @@ browserslist@^4.17.5:
     picocolors "^1.0.0"
 
 bs-css@^15.0.1:
-  version "15.3.0"
-  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-15.3.0.tgz#c497bf959cc86b8e535addfd6d16f74001f47374"
-  integrity sha512-Y/I2G4a4xLb9aqd1Qhx9Tae9J1DBM2eqSMET7iLwuiSdt8PaT6InnaDgLk9f0hGk/9O/6CCpZ/xlntVf+ZSkLQ==
+  version "15.3.1"
+  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-15.3.1.tgz#1749e1ea77a5d8d465c6fddde2c34525d70599c8"
+  integrity sha512-TV+Qzuj7O/EovX7EOp1xzvexXZ4oRpF/9qIXilenIkWYnAN61pn5gJ0E4OJxlRdj6iV2I7Tb81dq205VSW3Mdw==
 
 bser@2.1.1:
   version "2.1.1"
