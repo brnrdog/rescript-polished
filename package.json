@@ -29,7 +29,7 @@
     "test:ci": "jest --collect-coverage"
   },
   "dependencies": {
-    "bs-css": "^15.0.1",
+    "bs-css": "^16.0.0",
     "polished": "^4.0.3",
     "rescript": "^9.1.4"
   },

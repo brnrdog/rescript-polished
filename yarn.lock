@@ -2037,10 +2037,10 @@ browserslist@^4.17.5:
     node-releases "^2.0.1"
     picocolors "^1.0.0"
 
-bs-css@^15.0.1:
-  version "15.3.0"
-  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-15.3.0.tgz#c497bf959cc86b8e535addfd6d16f74001f47374"
-  integrity sha512-Y/I2G4a4xLb9aqd1Qhx9Tae9J1DBM2eqSMET7iLwuiSdt8PaT6InnaDgLk9f0hGk/9O/6CCpZ/xlntVf+ZSkLQ==
+bs-css@^16.0.0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-16.0.0.tgz#3221b53606023567885df75a535ef23f88bef32d"
+  integrity sha512-QU6oMKTbG3kRX86x8uhhK3+IG0dHoumlCgEDswmu4ZP8Y90c33MgDwItdADdpX24fPddnsy9W4DEw214/JTziA==
 
 bser@2.1.1:
   version "2.1.1"
