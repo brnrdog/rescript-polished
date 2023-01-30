@@ -31,7 +31,7 @@
   "dependencies": {
     "bs-css": "^15.0.1",
     "polished": "^4.0.3",
-    "rescript": "^9.1.4"
+    "rescript": "^10.1.2"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.7.0",
