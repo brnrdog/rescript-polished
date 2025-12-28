@@ -10,19 +10,19 @@ type rgbaColor = {"red": int, "green": int, "blue": int, "alpha": float}
 
 @module("polished")
 external shade: (float, color) => color = "shade"
-let shade = (color, ~amount) => color |> shade(amount)
+let shade = (color, ~amount) =>  shade(amount, color)
 
 @module("polished")
 external tint: (float, color) => color = "tint"
-let tint = (color, ~amount) => color |> tint(amount)
+let tint = (color, ~amount) => tint(amount, color)
 
 @module("polished")
 external lighten: (float, color) => color = "lighten"
-let lighten = (color, ~amount) => color |> lighten(amount)
+let lighten = (color, ~amount) => lighten(amount, color)
 
 @module("polished")
 external darken: (float, color) => color = "darken"
-let darken = (color, ~amount) => color |> darken(amount)
+let darken = (color, ~amount) => darken(amount, color)
 
 @module("polished")
 external hsl: (float, float, float) => color = "hsl"
@@ -30,7 +30,7 @@ let hsl = (~hue, ~saturation, ~lightness) => hsl(hue, saturation, lightness)
 
 @module("polished")
 external extAdjustHue: (float, color) => color = "adjustHue"
-let adjustHue = (color, ~degree) => color |> extAdjustHue(degree)
+let adjustHue = (color, ~degree) => extAdjustHue(degree, color)
 
 @module("polished")
 external complement: color => color = "complement"
@@ -38,7 +38,7 @@ let complement = complement
 
 @module("polished")
 external desaturate: (float, color) => color = "desaturate"
-let desaturate = (color, ~amount) => color |> desaturate(amount)
+let desaturate = (color, ~amount) => desaturate(amount, color)
 
 @module("polished")
 external getContrast: (color, color) => float = "getContrast"
@@ -66,7 +66,7 @@ let meetsContrastGuidelines = meetsContrastGuidelines
 
 @module("polished")
 external extTransparentize: (float, color) => color = "transparentize"
-let transparentize = (color, ~amount) => color |> extTransparentize(amount)
+let transparentize = (color, ~amount) => extTransparentize(amount, color)
 
 @module("polished")
 external hslToColorString: hslColor => color = "hslToColorString"
@@ -74,11 +74,11 @@ let hslToColorString = hslToColorString
 
 @module("polished")
 external mix: (float, color, color) => color = "mix"
-let mix = (color1, color2, ~weight) => color2 |> mix(weight, color1)
+let mix = (color1, color2, ~weight) => mix(weight, color1, color2)
 
 @module("polished")
 external opacify: (float, color) => color = "opacify"
-let opacify = (color, ~amount) => color |> opacify(amount)
+let opacify = (color, ~amount) => opacify(amount, color)
 
 @module("polished")
 external parseToHsl: color => hslColor = "parseToHsl"
@@ -103,16 +103,16 @@ let rgba = rgba
 
 @module("polished")
 external saturate: (float, color) => color = "saturate"
-let saturate = (color, ~amount) => color |> saturate(amount)
+let saturate = (color, ~amount) => saturate(amount, color)
 
 @module("polished")
 external setHue: (int, color) => color = "setHue"
-let setHue = (color, ~hue) => color |> setHue(hue)
+let setHue = (color, ~hue) => setHue(hue, color)
 
 @module("polished")
 external setLightness: (float, color) => color = "setLightness"
-let setLightness = (color, ~lightness) => color |> setLightness(lightness)
+let setLightness = (color, ~lightness) => setLightness(lightness, color)
 
 @module("polished")
 external setSaturation: (float, color) => color = "setSaturation"
-let setSaturation = (color, ~saturation) => color |> setSaturation(saturation)
+let setSaturation = (color, ~saturation) => setSaturation(saturation, color)

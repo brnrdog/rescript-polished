@@ -23,15 +23,15 @@
   },
   "scripts": {
     "res:start": "rescript build -w",
-    "res:build": "rescript build -with-deps",
-    "res:clean": "rescript clean -with-deps",
+    "res:build": "rescript build",
+    "res:clean": "rescript clean --with-deps",
     "test": "jest",
     "test:ci": "jest --collect-coverage"
   },
   "dependencies": {
-    "bs-css": "^15.0.1",
+    "bs-css": "^18.1.1",
     "polished": "^4.0.3",
-    "rescript": "^9.1.4"
+    "rescript": "^12.0.2"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.7.0",

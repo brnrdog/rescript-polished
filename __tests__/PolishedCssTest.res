@@ -2,7 +2,7 @@ open Jest
 open Expect
 open PolishedCss
 
-let toEqual = (x, y) => x |> toEqual(y)
+let toEqual = (x, y) => x->toEqual(y)
 
 describe("Color", () => {
   open Color

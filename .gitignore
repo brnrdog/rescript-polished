@@ -26,5 +26,5 @@ lib/bs
 .bsb.lock
 /node_modules/
 coverage
-*.bs.js
+*.res.js
 lib

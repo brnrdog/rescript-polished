@@ -1,0 +1,24 @@
+{
+  "name": "rescript-polished",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "__tests__",
+      "type": "dev"
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "commonjs"
+    }
+  ],
+  "suffix": ".res.js",
+  "dev-dependencies": ["@glennsl/bs-jest"],
+  "dependencies": ["bs-css"],
+  "warnings": {
+    "error": "+101"
+  }
+}

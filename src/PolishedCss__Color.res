@@ -1,11 +1,13 @@
 module Utils = {
+  module StdFloat = Float
+  module StdInt = Int
   open Css_AtomicTypes
 
   module Rgba = {
     let regex = "rgba\(\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*.\d+)\s*\)"
-    let rgbaRegexGroups = (_, i) => [1, 2, 3, 4]->Js.Array2.includes(i)
-    let rgbValue = v => v->Js.Nullable.toOption->Belt.Option.getExn->int_of_string
-    let alphaValue = v => v->Js.Nullable.toOption->Belt.Option.getUnsafe->float_of_string
+    let rgbaRegexGroups = (_, i) => [1, 2, 3, 4]->Array.includes(i)
+    let rgbValue = v => v->Nullable.toOption->Belt.Option.getExn->StdInt.fromString->Belt.Option.getExn
+    let alphaValue = v => v->Nullable.toOption->Belt.Option.getUnsafe->StdFloat.fromString->Belt.Option.getExn
 
     let fromString = string => {
       let result = regex->Js.Re.fromString->Js.Re.exec_(string)
@@ -15,10 +17,10 @@ module Utils = {
       | Some(result) => {
           let values = result->Js.Re.captures->Js.Array2.filteri(rgbaRegexGroups)
 
-          let red = values->Array.get(0)->rgbValue
-          let green = values->Array.get(1)->rgbValue
-          let blue = values->Array.get(2)->rgbValue
-          let alpha = values->Array.get(3)->alphaValue
+          let red = values->Array.getUnsafe(0)->rgbValue
+          let green = values->Array.getUnsafe(1)->rgbValue
+          let blue = values->Array.getUnsafe(2)->rgbValue
+          let alpha = values->Array.getUnsafe(3)->alphaValue
 
           Some(Color.rgba(red, green, blue, #num(alpha)))
         }
