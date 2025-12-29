@@ -3,9 +3,11 @@ module Utils = {
   module StdInt = Int
 
   module Rgba = {
-    let regex = "rgba\(\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*.\d+)\s*\)"
-    let rgbValue = v => v->Belt.Option.getExn->StdInt.fromString->Belt.Option.getExn
-    let alphaValue = v => v->Belt.Option.getUnsafe->StdFloat.fromString->Belt.Option.getExn
+    let regex = "rgba\\(\\s*(-?\\d+|-?\\d*\\.\\d+(?=%))\\s*,\\s*(-?\\d+|-?\\d*\\.\\d+(?=%))\\s*,\\s*(-?\\d+|-?\\d*\\.\\d+(?=%))\\s*,\\s*(-?\\d+|-?\\d*\\.\\d+)\\s*\\)"
+    let rgbValue = v => v->StdInt.fromString->Belt.Option.getExn
+    let alphaValue = v => v->StdFloat.fromString->Belt.Option.getExn
+
+    @get_index external unsafeGet: (RegExp.Result.t, int) => string = ""
 
     let fromString = string => {
       let result = regex->RegExp.fromString->RegExp.exec(string)
@@ -13,12 +15,10 @@ module Utils = {
       switch result {
       | None => None
       | Some(result) => {
-          let values = result->RegExp.Result.matches
-
-          let red = values->Array.getUnsafe(0)->rgbValue
-          let green = values->Array.getUnsafe(1)->rgbValue
-          let blue = values->Array.getUnsafe(2)->rgbValue
-          let alpha = values->Array.getUnsafe(3)->alphaValue
+          let red = result->unsafeGet(1)->rgbValue
+          let green = result->unsafeGet(2)->rgbValue
+          let blue = result->unsafeGet(3)->rgbValue
+          let alpha = result->unsafeGet(4)->alphaValue
 
           Some(Css_Js_Core.Types.Color.rgba(red, green, blue, #num(alpha)))
         }
