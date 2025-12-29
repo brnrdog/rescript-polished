@@ -12,11 +12,10 @@
   ],
   "package-specs": [
     {
-      "module": "commonjs"
+      "module": "es6"
     }
   ],
   "suffix": ".res.js",
-  "dev-dependencies": ["@glennsl/bs-jest"],
   "dependencies": ["bs-css"],
   "warnings": {
     "error": "+101"
