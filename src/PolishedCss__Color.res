@@ -4,9 +4,8 @@ module Utils = {
 
   module Rgba = {
     let regex = "rgba\(\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*.\d+)\s*\)"
-    let rgbaRegexGroups = (_, i) => [1, 2, 3, 4]->Array.includes(i)
-    let rgbValue = v => v->Nullable.toOption->Belt.Option.getExn->StdInt.fromString->Belt.Option.getExn
-    let alphaValue = v => v->Nullable.toOption->Belt.Option.getUnsafe->StdFloat.fromString->Belt.Option.getExn
+    let rgbValue = v => v->Belt.Option.getExn->StdInt.fromString->Belt.Option.getExn
+    let alphaValue = v => v->Belt.Option.getUnsafe->StdFloat.fromString->Belt.Option.getExn
 
     let fromString = string => {
       let result = regex->RegExp.fromString->RegExp.exec(string)
@@ -14,7 +13,7 @@ module Utils = {
       switch result {
       | None => None
       | Some(result) => {
-          let values = result->RegExp.Result.matches->Array.filterWithIndex(rgbaRegexGroups)
+          let values = result->RegExp.Result.matches
 
           let red = values->Array.getUnsafe(0)->rgbValue
           let green = values->Array.getUnsafe(1)->rgbValue
