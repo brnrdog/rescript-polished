@@ -91,8 +91,8 @@ let colorTests = () => {
     }),
     test("readableColor", () => {
       combineResults([
-        assertEqual("#ed5051"->readableColor(~strict=false, ()), "#fff"),
-        assertEqual("#000"->readableColor(), "#000"),
+        assertEqual("#ed5051"->readableColor(~strict=false, ()), "#000"),
+        assertEqual("#000"->readableColor(), "#fff"),
         assertEqual("black"->readableColor(~darkReturnColor="#ff8", ()), "#ff8"),
         assertEqual("white"->readableColor(~lightReturnColor="#001", ()), "#001"),
         assertEqual(
