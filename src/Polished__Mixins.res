@@ -26,37 +26,37 @@ external clearFix: option<string> => 'styles = "clearFix"
 let clearFix = (~parent=?) => parent->clearFix
 
 @module("polished")
-external cover: (~offset: Js.undefined<Size.t>) => 'styles = "cover"
-let cover = (~offset=?, ()) => cover(~offset=Js.Undefined.fromOption(offset))
+external cover: (~offset: Nullable.t<Size.t>) => 'styles = "cover"
+let cover = (~offset=?, ()) => cover(~offset=Nullable.fromOption(offset))
 
 @module("polished")
-external ellipsis: (~width: Js.undefined<Size.t>, ~lines: option<int>) => 'styles = "ellipsis"
+external ellipsis: (~width: Nullable.t<Size.t>, ~lines: option<int>) => 'styles = "ellipsis"
 let ellipsis = (~width=?, ~lines=?, ()) => {
-  ellipsis(~width=Js.Undefined.fromOption(width), ~lines)
+  ellipsis(~width=Nullable.fromOption(width), ~lines)
 }
 
 @module("polished")
 external fluidRange: (
   fluidRangeConfiguration,
-  ~minScreen: Js.undefined<string>,
-  ~maxScreen: Js.undefined<string>,
+  ~minScreen: Nullable.t<string>,
+  ~maxScreen: Nullable.t<string>,
 ) => 'styles = "fluidRange"
 let fluidRange = (~minScreen=?, ~maxScreen=?, cssProp) =>
   fluidRange(
     cssProp,
-    ~minScreen=Js.Undefined.fromOption(minScreen),
-    ~maxScreen=Js.Undefined.fromOption(maxScreen),
+    ~minScreen=Nullable.fromOption(minScreen),
+    ~maxScreen=Nullable.fromOption(maxScreen),
   )
 
 @module("polished")
 external fluidRangeWithArray: (
   array<fluidRangeConfiguration>,
-  ~minScreen: Js.undefined<string>,
-  ~maxScreen: Js.undefined<string>,
+  ~minScreen: Nullable.t<string>,
+  ~maxScreen: Nullable.t<string>,
 ) => 'styles = "fluidRange"
 let fluidRangeWithArray = (~minScreen=?, ~maxScreen=?, cssProps) =>
   fluidRangeWithArray(
     cssProps,
-    ~minScreen=Js.Undefined.fromOption(minScreen),
-    ~maxScreen=Js.Undefined.fromOption(maxScreen),
+    ~minScreen=Nullable.fromOption(minScreen),
+    ~maxScreen=Nullable.fromOption(maxScreen),
   )

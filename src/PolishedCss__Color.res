@@ -1,7 +1,6 @@
 module Utils = {
   module StdFloat = Float
   module StdInt = Int
-  open Css_AtomicTypes
 
   module Rgba = {
     let regex = "rgba\(\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*\.\d+(?=%))\s*,\s*(-?\d+|-?\d*.\d+)\s*\)"
@@ -10,19 +9,19 @@ module Utils = {
     let alphaValue = v => v->Nullable.toOption->Belt.Option.getUnsafe->StdFloat.fromString->Belt.Option.getExn
 
     let fromString = string => {
-      let result = regex->Js.Re.fromString->Js.Re.exec_(string)
+      let result = regex->RegExp.fromString->RegExp.exec(string)
 
       switch result {
       | None => None
       | Some(result) => {
-          let values = result->Js.Re.captures->Js.Array2.filteri(rgbaRegexGroups)
+          let values = result->RegExp.Result.matches->Array.filterWithIndex(rgbaRegexGroups)
 
           let red = values->Array.getUnsafe(0)->rgbValue
           let green = values->Array.getUnsafe(1)->rgbValue
           let blue = values->Array.getUnsafe(2)->rgbValue
           let alpha = values->Array.getUnsafe(3)->alphaValue
 
-          Some(Color.rgba(red, green, blue, #num(alpha)))
+          Some(Css_Js_Core.Types.Color.rgba(red, green, blue, #num(alpha)))
         }
       }
     }
@@ -30,13 +29,13 @@ module Utils = {
 
   module Hex = {
     let fromString = string =>
-      #hex(string->Js.String2.slice(~from=1, ~to_=Js.String.length(string)))
+      #hex(string->String.slice(~start=1, ~end=String.length(string)))
   }
 
-  let toString = Color.toString
+  let toString = Css_Js_Core.Types.Color.toString
 
   let fromString = string => {
-    switch string->Js.String2.slice(~from=0, ~to_=4) {
+    switch string->String.slice(~start=0, ~end=4) {
     | "rgba" => string->Rgba.fromString->Belt.Option.getExn
     | _ => string->Hex.fromString
     }
