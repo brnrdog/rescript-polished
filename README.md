@@ -18,10 +18,10 @@ npm install --save rescript-polished
 yarn add rescript-polished
 ```
 
-Add `rescript-polished` as a `bs-dependency` in your bsconfig.json:
+Add `rescript-polished` as a `dependency` in your rescript.json:
 
 ```json
-"bs-dependencies": [
+"dependencies": [
   "rescript-polished"
 ]
 ```
