@@ -5,8 +5,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/brnrdog/rescript-polished?style=flat-square)](https://codecov.io/gh/brnrdog/rescript-polished)
 
 Bindings for [polished](https://polished.js.org/), _a lightweight toolset for writing styles in JavaScript_, **now in ReScript** ✨.
-
-**Note:** these bindings are still under development, check the [Polished](https://github.com/brnrdog/rescript-polished/blob/main/src/Polished.res) module to see the available functions.
+Check the [Polished](https://github.com/brnrdog/rescript-polished/blob/main/src/Polished.res) module to see the available Polished functions.
 
 ## Installation
 
