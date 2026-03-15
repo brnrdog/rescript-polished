@@ -1,5 +1,5 @@
 open PolishedCss
-open TestFramework
+open Zekr
 
 let colorTests = () => {
   open Color

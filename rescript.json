@@ -17,6 +17,7 @@
   ],
   "suffix": ".res.js",
   "dependencies": ["bs-css"],
+  "dev-dependencies": ["zekr"],
   "warnings": {
     "error": "+101"
   }
