@@ -1,4 +1,4 @@
-open TestFramework
+open Zekr
 open Polished
 
 let colorTests = () => {
